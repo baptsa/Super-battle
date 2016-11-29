@@ -1,2 +1,15 @@
 <h1> Hello Motherfuckers, welcome on superbattle </h1>
-<%= image_tag "logo.png"%>
+
+
+<form action="/fight" method="POST">
+  <input name="challenger" type="text" placeholder="Challenger" >
+  <input name="opponent" type="text" placeholder="Opponent">
+  <input type="submit">
+</form>
+
+
+<div class: "text-center">
+  <%= image_tag "logo.png", style: "width: 200px; height: 200px" %>
+</div>
+
+
