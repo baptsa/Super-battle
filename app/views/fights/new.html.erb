@@ -1,0 +1,11 @@
+<!-- <form action="/fights" method="POST">
+  <input name="challenger" type="text" placeholder="Challenger" >
+  <input name="opponent" type="text" placeholder="Opponent">
+  <input type="submit">
+</form> -->
+
+<%= simple_form_for(@fight) do |form| %>
+  <%= form.association :challenger, label_method: :username, value_method: :id %>
+  <%= form.association :opponent, label_method: :username, value_method: :id %>
+  <%= form.button :submit %>
+<% end %>
