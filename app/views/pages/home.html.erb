@@ -1,8 +1,19 @@
-<h1> Hello Motherfuckers, welcome on superbattle </h1>
+<h1 class="text-center"> Welcome on superbattle </h1>
 
-<%= link_to 'Start a fight', new_fight_path %>
-
-<div class: "text-center">
-  <%= image_tag "logo.png", style: "width: 200px; height: 200px" %>
+<div class="text-center" style="margin-top: 40px" >
+  <form action="/users/sign_in" method="POST">
+   <input name="username" type="text" placeholder="Challenger" >
+   <input name="username" type="text" placeholder="Opponent" >
+  </form>
 </div>
+<div class="text-center">
+  <%= link_to 'Start a fight', new_fight_path, class: "btn btn-primary" %>
+</div>
+
+<div class="text-center">
+  <%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "320x200") %>
+</div>
+
+
+
 
