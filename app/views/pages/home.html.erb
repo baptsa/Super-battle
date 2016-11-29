@@ -22,6 +22,29 @@
   </div>
 </div>
 
+<div class="text-center">
+  <%= link_to 'Start a fight', new_fight_path, class: "btn btn-primary" %>
+</div>
+
+<div class="text-center">
+  <%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "320x200") %>
+</div>
+
+<h1>Instagram Lookup</h1>
+  <% @popular.each do |popular| %>
+  <div class="col-sm-12 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag popular.profile_picture %>
+      <div class="caption">
+        <%= popular.username %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+
   <div class="text-center">
     <%= link_to 'Start a fight', new_fight_path, class: "btn btn-primary" %>
   </div>
