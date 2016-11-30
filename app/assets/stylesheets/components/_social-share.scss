@@ -1,34 +1,36 @@
 .social-container {
-  color: yellow;
+  color: #3498db;
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   padding: 5px;
-  font-size: 20px;
+  font-size: 30px;
   margin-top: 20px;
   margin-right: 15px;
-  justify-content: space-around;
-  height: 50px;
+  justify-content: space-between;
+  height: 250px;
+  text-shadow: 2px 2px blue;
 }
 
 .social-container a {
-  color: #0068cb;
+  color: #3498db;
+  border: 2px solid #3498db;
+  padding: 5px;
+  margin-bottom: 20px;
 }
 
 @media screen and (min-width: 900px) {
   .social-container {
-    width: 200px;
     position: fixed;
     right: 0;
-    bottom: 0;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    top: 60px;
   }
 }
 
 @media screen and (max-width: 900px) {
   .social-container {
     margin-top: 30px;
-    height: 50px;
+    flex-flow: row;
+    height: 90px;
     width: 200px;
     margin-right: auto;
     margin-left: auto;

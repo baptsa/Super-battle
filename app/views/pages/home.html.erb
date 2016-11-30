@@ -1,29 +1,40 @@
-<h1 class="text-center"> Welcome on superbattle </h1>
+
+  <h1 class="text-center title-style"> Who'll win the Instagram Battle? </h1>
+
 
 <div class="container">
   <div class="row">
+    <div class="col-xs-6 col-sm-4">
+      <div class="card">
+        <form action="/users/sign_in" method="POST" class="form-challenger">
+         <input name="username" type="text" placeholder="Challenger" >
+        </form>
+      </div>
+    </div>
     <div class="col-xs-12 col-sm-4">
-        <div class="text-center" style="margin-top: 40px" >
-          <form action="/users/sign_in" method="POST">
-           <input name="username" type="text" placeholder="Challenger" >
-          </form>
+      <div class="card">
+        <div class="div-video">
+          <div class="border-video">
+            <%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "190x190") %>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-4">
-        <%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "320x200") %>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-        <div class="text-center" style="margin-top: 40px" >
-          <form action="/users/sign_in" method="POST">
+    <div class="col-xs-6 col-sm-4">
+      <div class="card">
+        <div>
+          <form action="/users/sign_in" method="POST" class="form-opponent">
           <input name="username" type="text" placeholder="Opponent" >
           </form>
         </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="text-center">
-  <%= link_to 'Start a fight', new_fight_path, class: "btn btn-primary" %>
+<div class="button-container">
+  <div class="button-start text-center">
+    <%= link_to 'Start a fight', new_fight_path, class: "btn-zguy" %>
+  </div>
 </div>
-
 
