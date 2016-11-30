@@ -27,3 +27,22 @@
 </div>
 
 
+
+
+
+<% @users.each do |user| %>
+  <li> <%= user.username %> and <%= user.full_name %> <%= user.id %> </li>
+<% end  %>
+
+<h4>follower <%= @follows.counts.followed_by %></h4>
+<h4>following <%= @follows.counts.follows %></h4>
+<h4>posts <%= @follows.counts.media %></h4>
+
+<% @recent_media.each do |media| %>
+  <h4> like <%= media.likes["count"] %></h4>
+  <h4> comment <%= media.comments["count"] %></h4>
+
+<% end %>
+
+
+
