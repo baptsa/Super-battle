@@ -4,9 +4,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4">
         <div class="text-center" style="margin-top: 40px" >
-          <form action="/users/sign_in" method="POST">
-           <input name="username" type="text" placeholder="Challenger" >
-          </form>
+          <form action="/insta_users" method="POST">
+           <input name="challenger" type="text" placeholder="Challenger" >
+
         </div>
     </div>
     <div class="col-xs-12 col-sm-4">
@@ -14,8 +14,9 @@
     </div>
     <div class="col-xs-12 col-sm-4">
         <div class="text-center" style="margin-top: 40px" >
-          <form action="/users/sign_in" method="POST">
-          <input name="username" type="text" placeholder="Opponent" >
+
+            <input name="opponent" type="text" placeholder="Opponent" >
+            <button type="submit"> Go </button>
           </form>
         </div>
     </div>
@@ -29,20 +30,6 @@
 
 
 
-
-<% @users.each do |user| %>
-  <li> <%= user.username %> and <%= user.full_name %> <%= user.id %> </li>
-<% end  %>
-
-<h4>follower <%= @follows.counts.followed_by %></h4>
-<h4>following <%= @follows.counts.follows %></h4>
-<h4>posts <%= @follows.counts.media %></h4>
-
-<% @recent_media.each do |media| %>
-  <h4> like <%= media.likes["count"] %></h4>
-  <h4> comment <%= media.comments["count"] %></h4>
-
-<% end %>
 
 
 

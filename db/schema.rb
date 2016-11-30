@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129133125) do
+ActiveRecord::Schema.define(version: 20161130151601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,12 +30,13 @@ ActiveRecord::Schema.define(version: 20161129133125) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "bio"
-    t.string   "media"
     t.integer  "follow"
     t.integer  "followed_by"
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "engagement"
+    t.integer  "media"
     t.index ["user_id"], name: "index_insta_users_on_user_id", using: :btree
   end
 
