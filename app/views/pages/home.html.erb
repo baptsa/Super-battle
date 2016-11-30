@@ -14,18 +14,21 @@
   <%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "320x200") %>
 </div>
 
-<h1>Instagram Lookup</h1>
-  <% @popular.each do |popular| %>
-  <div class="col-sm-12 col-md-4">
-    <div class="thumbnail">
-      <%= image_tag popular.profile_picture %>
-      <div class="caption">
-        <%= popular.username %>
-      </div>
-    </div>
-  </div>
-<% end %>
 
+
+<% @users.each do |user| %>
+  <li> <%= user.username %> and <%= user.full_name %> <%= user.id %> </li>
+<% end  %>
+
+<h4>follower <%= @follows.counts.followed_by %></h4>
+<h4>following <%= @follows.counts.follows %></h4>
+<h4>posts <%= @follows.counts.media %></h4>
+
+<% @recent_media.each do |media| %>
+<h4> like <%= media.likes["count"] %></h4>
+<h4> comment <%= media.comments["count"] %></h4>
+
+<% end %>
 
 
 
