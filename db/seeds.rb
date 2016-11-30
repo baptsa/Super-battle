@@ -17,7 +17,7 @@ romain = User.create!(email:"romain@super-battle.com", password:"azerty")
 
 InstaUser.create!({
   username:          "Beyonce",
-  profile_picture:   "url",
+  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/12918039_230227960666719_282379501_a.jpg",
   first_name:        "Beyoncé",
   last_name:         "Beyoncé",
   bio:               "coucou c'est beyoncé",
@@ -29,7 +29,7 @@ InstaUser.create!({
 
 InstaUser.create!({
   username:          "Mr Holland",
-  profile_picture:   "url",
+  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/12917992_895774263873055_1966939033_a.jpg",
   first_name:        "François",
   last_name:         "Hollande",
   bio:               "Coucou, c'est Hollande",
@@ -41,7 +41,7 @@ InstaUser.create!({
 
 InstaUser.create!({
   username:          "Shakira-Shakira",
-  profile_picture:   "url",
+  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/15101730_833344936808672_3706769398803988480_a.jpg",
   first_name:        "shakira",
   last_name:         "shakira",
   bio:               "coucou c'est shakira",
@@ -53,7 +53,7 @@ InstaUser.create!({
 
 InstaUser.create!({
   username:          "Barack Obama",
-  profile_picture:   "url",
+  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/12345756_1206817265997207_288075195_a.jpg",
   first_name:        "Barack",
   last_name:         "Obama",
   bio:               "I am still the president",
@@ -65,7 +65,7 @@ InstaUser.create!({
 
 InstaUser.create!({
   username:          "Michael Phelps",
-  profile_picture:   "url",
+  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/14134712_1142642795792654_2109380723_a.jpg",
   first_name:        "Michael",
   last_name:         "Phelps",
   bio:               "I am an OL gold medal winner",
@@ -77,7 +77,7 @@ InstaUser.create!({
 
 InstaUser.create!({
   username:          "Lionel Messi",
-  profile_picture:   "url",
+  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/11374627_416190928582643_995636312_a.jpg",
   first_name:        "Lionel",
   last_name:         "Messi",
   bio:               "I am the best football player",
