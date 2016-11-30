@@ -24,6 +24,9 @@ class FightsController < ApplicationController
     end
   end
 
+
+
+
   # def points_followers
   #     @fight.opponent.followed_by
   #     for (var i = 0 ; i < 10; i= 2 )
