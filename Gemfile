@@ -13,6 +13,8 @@ gem 'redis'
 gem 'instagram'
 gem 'omniauth'
 gem 'omniauth-instagram', '~> 1.0', '>= 1.0.2'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 
 gem 'sass-rails'
 gem 'jquery-rails'

@@ -6,4 +6,7 @@ class Fight < ApplicationRecord
   validates :challenger_id, presence: true, allow_blank: false
   validates :opponent_id, presence: true, allow_blank: false
 
+  # require 'score_algorithm.rb'
+
 end
+
