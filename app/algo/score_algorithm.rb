@@ -36,6 +36,4 @@ def score_score_media(user)
   end
 end
 
-score_followers(paal)
-
 
