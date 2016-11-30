@@ -26,10 +26,3 @@
   <%= link_to 'Start a fight', new_fight_path, class: "btn btn-primary" %>
 </div>
 
-
-
-<% url = 'https://api.instagram.com/v1/users/1396122422/?access_token=1396122422.8121a2b.5af675e0c9354c3b94e601cd74ed2ed9
-' %>
-<% user_serialized = open(url).read %>
-<% user = JSON.parse(user_serialized) %>
-<%= user["data"]["counts"]["media"] %>
