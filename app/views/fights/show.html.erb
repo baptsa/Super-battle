@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2 col-sm-4">
+    <div class="col-xs-12 text-center">
       <%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "320x200") %>
     </div>
   </div>
@@ -9,39 +9,31 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <%= @fight.challenger.profile_picture %>
+    <div class="col-xs-12 col-sm-6 text-center">
+      <%= image_tag @fight.challenger.profile_picture, class: "avatar-large" %>
       <%= @fight.challenger.username %>
     </div>
-
-    <div class="col-xs-12 col-sm-4">
-      <%= @fight.opponent.profile_picture %>
+    <div class="col-xs-12 col-sm-6 text-center">
       <%= @fight.opponent.username %>
+      <%= image_tag @fight.opponent.profile_picture, class: "avatar-large" %>
     </div>
   </div>
 </div>
 
-
-
-<div>
-  <%= @fight.opponent.first_name %>
-  <%= @fight.opponent.last_name %>
-  <%= @fight.opponent.follow %>
-  <%= @fight.opponent.followed_by %>
-  <%= @fight.opponent.media %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 text-center">
+      <p> Followers : <span> <%= @fight.opponent.follow %> </span> </p>
+      <p> Following : <span> <%= @fight.opponent.followed_by %> </span> </p>
+      <p> Following : <span> <%= @fight.opponent.media %> </span> </p>
+    </div>
+    <div class="col-xs-12 col-sm-6 text-center">
+      <p> Followers : <span> <%= @fight.challenger.follow %> </span> </p>
+      <p> Following : <span> <%= @fight.challenger.followed_by %> </span> </p>
+      <p> Following : <span> <%= @fight.challenger.media %> </span> </p>
+    </div>
+  </div>
 </div>
-
-
-
-<div>
-  <%= @fight.challenger.first_name %>
-  <%= @fight.challenger.last_name %>
-  <%= @fight.challenger.follow %>
-  <%= @fight.challenger.followed_by %>
-  <%= @fight.challenger.media %>
-</div>
-
-
 
 
 
