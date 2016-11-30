@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-InstaUser.destroy_all
 
 jo = User.create!(email:"jomourot@supper-battle.com", password:"azerty")
 paal = User.create!(email:"paal@supper-battle.com", password:"azerty")
@@ -39,6 +37,7 @@ InstaUser.create!({
   user_id:           jo.id
 })
 
+
 InstaUser.create!({
   username:          "Shakira-Shakira",
   profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/15101730_833344936808672_3706769398803988480_a.jpg",
@@ -50,6 +49,28 @@ InstaUser.create!({
   followed_by:       100,
   user_id:           paal.id
 })
+
+
+
+# User.destroy_all
+# InstaUser.destroy_all
+
+# jo = User.new(email:"jomourot@supper-battle.com", password:"azerty")
+# jo.save!
+
+# paal = User.new(email:"paal@supper-battle.com", password:"azerty")
+# paal.save!
+
+# zguy = User.new(email:"zguy@supper-battle.com", password:"azerty")
+# zguy.save!
+
+
+# beyonce = InstaUser.new(username: "Beyonce", profile_picture: "url", first_name:"Beyoncé", last_name:"Beyoncé", bio:"coucou c'est beyoncé", media:8, follow:10, followed_by:30, user_id:jo.id )
+# beyonce.save!
+
+
+# shakira = InstaUser.new(username: "Shakira-Shakira", profile_picture: "url", first_name:"shakira", last_name:"shakira", bio:"coucou c'est shakira", media:8, follow:10, followed_by:30, user_id:paal.id )
+# shakira.save!
 
 InstaUser.create!({
   username:          "Barack Obama",
@@ -86,6 +107,7 @@ InstaUser.create!({
   followed_by:       91023,
   user_id:           paal.id
 })
+
 
 fight1 = Fight.create!(challenger_id: 1, opponent_id: 2)
 fight2 = Fight.create!(challenger_id: 1, opponent_id: 2)
