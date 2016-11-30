@@ -1,3 +1,5 @@
+require 'score_algorithm.rb'
+
 class InstaUser < ApplicationRecord
   # belongs_to :user
   has_many :fights_as_competitor, class_name: "Fight", foreign_key: :opponent_id, dependent: :destroy
