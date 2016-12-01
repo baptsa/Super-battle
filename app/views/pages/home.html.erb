@@ -7,7 +7,7 @@
     <div class="col-xs-6 col-sm-4">
       <div class="card">
         <%= form_tag insta_users_path, method: :post do %>
-         <%= text_field_tag :challenger, nil, placeholder: "Challenger" %>
+         <%= text_field_tag :challenger, nil, placeholder: "Challenger", class: "form-challenger" %>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
@@ -22,7 +22,7 @@
     <div class="col-xs-6 col-sm-4">
       <div class="card">
         <div>
-          <%= text_field_tag :opponent, nil, placeholder: "Opponent" %>
+          <%= text_field_tag :opponent, nil, placeholder: "Opponent", class: "form-opponent" %>
         </div>
       </div>
     </div>
