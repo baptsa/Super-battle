@@ -1,0 +1,93 @@
+.fighterchallenger {
+  position: relative;
+  margin-bottom: 11vh;
+}
+
+#myProgress {
+    position: absolute;
+    left: 41%;
+    top: 118%;
+    width: 50%;
+    height: 30px;
+    border: 1px solid #EB0101;
+}
+#myBar {
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: #EB0101;
+}
+
+.imagechallenger {
+  position: absolute;
+  top: 0%;
+  left: 23%;
+}
+
+.imagechallenger1 {
+  position: absolute;
+  top: 0%;
+  left: 59%;
+}
+
+#myProgress1 {
+  position: absolute;
+  left: 11%;
+  top: 118%;
+  width: 50%;
+  height: 30px;
+  border: 1px solid #151EB1;
+}
+#myBar1 {
+  float: right;
+  width: 20%;
+  height: 100%;
+  background-color: #151EB1;
+}
+
+.containers-show-animation {
+  margin-top: 7vh;
+}
+
+.containers-show-score-bar {
+  margin-top: 3vh;
+}
+
+.container-show-scores {
+  margin-top: 20vh;
+}
+
+#challenger-name {
+  padding-left: 13%;
+  margin: 0px;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  .imagechallenger {
+    position: absolute;
+    top: 0%;
+    left: 25%;
+  }
+  #challenger-name {
+  padding-left: 10%;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  .imagechallenger {
+    position: absolute;
+    top: 0%;
+    left: 29%;
+  }
+  #challenger-name {
+  padding-left: 8%;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {  }
