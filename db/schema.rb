@@ -10,18 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130160804) do
+ActiveRecord::Schema.define(version: 20161201100933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "fights", force: :cascade do |t|
-    t.integer  "result"
     t.integer  "challenger_id"
     t.integer  "opponent_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "user_id"
+    t.integer  "follower_score_challenger"
+    t.integer  "follower_score_opponent"
+    t.integer  "media_score_challenger"
+    t.integer  "media_score_opponent"
+    t.integer  "engagement_score_challenger"
+    t.integer  "engagement_score_opponent"
+    t.integer  "final_score_challenger"
+    t.integer  "final_score_opponent"
   end
 
   create_table "insta_users", force: :cascade do |t|

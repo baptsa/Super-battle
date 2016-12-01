@@ -1,5 +1,3 @@
-require 'score_algorithm.rb'
-
 class InstaUser < ApplicationRecord
   belongs_to :user
  # has_one :user, dependent: :destroy
