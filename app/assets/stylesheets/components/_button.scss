@@ -17,3 +17,36 @@
   background-color: #1FA8CF;
   border: 0;
 }
+
+
+.button-instagram {
+
+    position: relative;
+    background-color: #1FA8CF;
+    width: 250px;
+    height: 45px;
+    text-decoration: none;
+    border: 1px solid white;
+
+}
+
+.button-instagram i {
+    position: absolute;
+    color: white;
+    top: 0px;
+    left: 10px;
+    font-size: 43px;
+}
+
+.button-instagram p {
+      color: white;
+    position: absolute;
+    top: -16px;
+    width: 200px;
+    font-size: 18px;
+    left: 46px;
+    top: 13px;
+    font-family: "Contrail One", "cursive";
+}
+
+
