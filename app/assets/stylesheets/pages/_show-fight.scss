@@ -10,6 +10,7 @@
     width: 50%;
     height: 30px;
     border: 1px solid #EB0101;
+    border-radius: 10px;
 }
 #myBar {
   float: left;
@@ -37,6 +38,7 @@
   width: 50%;
   height: 30px;
   border: 1px solid #151EB1;
+  border-radius: 10px;
 }
 #myBar1 {
   float: right;
@@ -54,7 +56,7 @@
 }
 
 .container-show-scores {
-  margin-top: 20vh;
+  margin-top: 10px;
 }
 
 #challenger-name {

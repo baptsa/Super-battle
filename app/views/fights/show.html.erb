@@ -14,7 +14,7 @@
 
 <div class="container containers-show-score-bar">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 fighterchallenger text-center  ">
+    <div class="col-xs-12 col-sm-6 fighterchallenger text-center">
       <div id="myProgress">
         <div id="myBar"></div>
       </div>
@@ -39,36 +39,47 @@
 
 <div class="container container-show-scores">
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="table text-center">
-        <table>
-          <tr>
-             <th>..</th>
-             <th>number</th>
-             <th>Score</th>
-           </tr>
-            <tr>
-              <td> Followers : </td>
-              <td> <%= @fight.opponent.follow %> </td>
-              <td> 32 </td>
-            </tr>
-            <tr>
-              <td> Posts : </td>
-              <td> <%= @fight.challenger.media %> </td>
-              <td> 32 </td>
-            </tr>
-            <tr>
-              <td> Engagement : </td>
-              <td> 5% </td>
-              <td> 12 </td>
-            </tr>
-        </table>
+    <div class="col-xs-12 col-sm-6 text-center">
+      <div class="row">
+        <div class="col-xs-6">
+        <h2>Stats</h2>
+          <div class="card-challenger">
+          <p> Followers : <span> <%= @fight.challenger.followed_by %> </span> </p>
+          <p> Engagement : <span> <%= @fight.challenger.engagement %> </span> </p>
+          <p> Posts : <span> <%= @fight.challenger.media %> </span> </p>
+          </div>
+        </div>
+        <div class="col-xs-6">
+        <h2>Scores</h2>
+          <div class="card-result-challenger">
+            <p> <span> <%= @fight.follower_score_challenger %> </span> </p>
+            <p> <span> <%= @fight.engagement_score_challenger %> </span> </p>
+            <p> <span> <%= @fight.media_score_challenger %> </span> </p>
+            <h1 class="card-result"> <span> <%= @fight.final_score_challenger %> </span> </h1>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-6">
-      <p> Followers : <span> <%= @fight.challenger.follow %> </span> </p>
-      <p> Following : <span> <%= @fight.challenger.followed_by %> </span> </p>
-      <p> Posts : <span> <%= @fight.challenger.media %> </span> </p>
+    <div class="col-xs-12 col-sm-6 text-center">
+      <div class="row">
+        <div class="col-xs-6">
+        <h2>Stats</h2>
+          <div class="card-opponent">
+            <p> Followers : <span> <%= @fight.opponent.followed_by %> </span> </p>
+            <p> Engagement : <span> <%= @fight.opponent.engagement %> </span> </p>
+            <p> Posts : <span> <%= @fight.opponent.media %> </span> </p>
+          </div>
+        </div>
+        <div class="col-xs-6">
+        <h2>Scores</h2>
+          <div class="card-result-opponent">
+            <p> <span> <%= @fight.follower_score_opponent %> </span> </p>
+            <p> <span> <%= @fight.engagement_score_opponent %> </span> </p>
+            <p> <span> <%= @fight.media_score_opponent %> </span> </p>
+            <h1 class="card-result"> <span> <%= @fight.final_score_opponent %> </span> </h1>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
