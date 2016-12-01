@@ -8,7 +8,11 @@
   margin-right: 15px;
   justify-content: space-between;
   height: 250px;
-  text-shadow: 2px 2px blue;
+  text-shadow: 2px 2px #1FA8CF;
+}
+
+.social-container p {
+  text-shadow: 2px 2px #1FA8CF;
 }
 
 .social-container a {
@@ -37,6 +41,3 @@
   }
 }
 
-.social-bottom i {
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-}
