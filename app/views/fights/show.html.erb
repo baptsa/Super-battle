@@ -12,6 +12,10 @@
   </div>
 </div>
 
+<div class="text-center">
+  <button onclick="move()" class="btn btn-danger">Click Me</button>
+</div>
+
 <div class="container containers-show-score-bar">
   <div class="row">
     <div class="col-xs-12 col-sm-6 fighterchallenger text-center">
@@ -44,10 +48,10 @@
         <div class="col-xs-6">
         <h2>Scores</h2>
           <div class="card-result-challenger">
-            <p> <span> <%= @fight.follower_score_challenger %> </span> </p>
+            <p> <span id="score-followers-challenger"> <%= @fight.follower_score_challenger %> </span> </p>
             <p> <span> <%= @fight.engagement_score_challenger %> </span> </p>
             <p> <span> <%= @fight.media_score_challenger %> </span> </p>
-            <h1 class=""> <span> <%= @fight.final_score_challenger %> </span> </h1>
+            <h1 class=""> <span id="final-score-followers-challenger"> <%= @fight.final_score_challenger %> </span> </h1>
           </div>
         </div>
         <div class="col-xs-6">
@@ -83,6 +87,27 @@
     </div>
   </div>
 </div>
+
+<script>
+
+function move() {
+  var bar = document.getElementById("myBar");
+  var width = 1;
+  var id = setInterval(frame, 40);
+  function frame() {
+    var score1 = Number($('#final-score-followers-challenger').text());
+    var new_score = score1 //follow_score
+    if (width >= new_score) {
+      clearInterval(id);
+    } else {
+      width++;
+      bar.style.width = width + '%';
+    }
+  }
+}
+</script>
+
+
 
 
 
