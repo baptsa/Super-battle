@@ -34,7 +34,18 @@
     width: 200px;
     margin-right: auto;
     margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .social-container a {
     border: 0px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .social-container a i {
+    color: blue;
   }
 }
 
