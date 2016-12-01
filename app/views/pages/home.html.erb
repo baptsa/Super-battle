@@ -23,8 +23,6 @@
       <div class="card">
         <div>
           <%= text_field_tag :opponent, nil, placeholder: "Opponent" %>
-          <%= submit_tag "Click Me!" %>
-          <% end %>
         </div>
       </div>
     </div>
@@ -33,7 +31,9 @@
 
 <div class="button-container">
   <div class="button-start text-center">
-    <%= link_to 'Start a fight', new_fight_path, class: "btn-zguy" %>
+    <%= submit_tag "Let's fight!", class: "btn-zguy" %>
+    <% end %>
+
   </div>
 </div>
 
