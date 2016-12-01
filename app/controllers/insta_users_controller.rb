@@ -6,6 +6,7 @@ class InstaUsersController < ApplicationController
 
 
   def create
+
     client = Instagram.client(:access_token => current_user.token)
     insta_challenger = client.user_search(params[:challenger])
     challenger_infos = client.user(insta_challenger[0].id)
