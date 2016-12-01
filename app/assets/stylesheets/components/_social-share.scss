@@ -1,5 +1,5 @@
 .social-container {
-  color: #3498db;
+  color: white;
   display: flex;
   flex-flow: column;
   padding: 5px;
@@ -13,7 +13,7 @@
 
 .social-container a {
   color: #3498db;
-  border: 2px solid #3498db;
+  border: 2px solid white;
   padding: 5px;
   margin-bottom: 20px;
 }
@@ -34,10 +34,12 @@
     width: 200px;
     margin-right: auto;
     margin-left: auto;
+    border: 0px;
   }
 }
 
-.social-bottom i {
+.social-container i {
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: white;
 }
 
