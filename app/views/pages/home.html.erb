@@ -6,9 +6,8 @@
   <div class="row">
     <div class="col-xs-6 col-sm-4">
       <div class="card">
-        <form action="/users/sign_in" method="POST" class="form-challenger">
-         <input name="username" type="text" placeholder="Challenger" >
-        </form>
+        <form action="/insta_users" method="POST">
+         <input name="challenger" type="text" placeholder="Challenger" class="form-challenger" >
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
@@ -23,8 +22,8 @@
     <div class="col-xs-6 col-sm-4">
       <div class="card">
         <div>
-          <form action="/users/sign_in" method="POST" class="form-opponent">
-          <input name="username" type="text" placeholder="Opponent" >
+          <input name="opponent" type="text" placeholder="Opponent" class="form-opponent" >
+          <button type="submit" class="form-opponent"> Go </button>
           </form>
         </div>
       </div>
@@ -37,4 +36,62 @@
     <%= link_to 'Start a fight', new_fight_path, class: "btn-zguy" %>
   </div>
 </div>
+
+
+
+<!-- limit -->
+
+
+
+<!--
+<h1 class="text-center"> Welcome on superbattle </h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+        <div class="text-center" style="margin-top: 40px" >
+
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <#%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "320x200") %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <div class="text-center" style="margin-top: 40px" >
+
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <#%= link_to 'Start a fight', new_fight_path, class: "btn btn-primary" %>
+</div>
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
