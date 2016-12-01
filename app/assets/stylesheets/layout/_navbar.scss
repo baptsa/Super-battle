@@ -1,12 +1,13 @@
 /* Main class */
 .navbar-wagon {
-  background: #3498db;
+  background: rgba(300, 280, 255, 0.3);
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
   padding: 0px 30px;
   align-items: center;
   justify-content: flex-end;
+  border-bottom: solid 1px white;
 }
 
 .navbar-wagon-right {
