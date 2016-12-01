@@ -38,9 +38,9 @@ class FightsController < ApplicationController
     recent_media = recent_media.count
     like_sum = like_counts.map(&:to_i).reduce(:+)
     comments_sum = comments_counts.map(&:to_i).reduce(:+)
-    engagement = (like_sum + comments_sum) / recent_media
+    challenger_engagement = (like_sum + comments_sum) / recent_media
 
-    @challenger = InstaUser.new(username: username, profile_picture: profile_picture, followed_by: followed_by, follow: follows, media: media, engagement: engagement)
+    @challenger = InstaUser.new(username: username, profile_picture: profile_picture, followed_by: followed_by, follow: follows, media: media, engagement: challenger_engagement)
     @challenger.save
 
 
