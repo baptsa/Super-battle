@@ -90,22 +90,29 @@
 
 <script>
 
-function move() {
-  var bar = document.getElementById("myBar");
-  var width = 1;
-  var id = setInterval(frame, 40);
-  function frame() {
-    var score1 = Number($('#final-score-followers-challenger').text());
-    var new_score = score1 //follow_score
-    if (width >= new_score) {
-      clearInterval(id);
-    } else {
-      width++;
-      bar.style.width = width + '%';
+window.addEventListener("load", function(event) {
+  function move() {
+    var bar = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 40);
+    function frame() {
+      var score1 = Number($('#final-score-followers-challenger').text());
+      var new_score = score1 //follow_score
+      if (width >= new_score) {
+        clearInterval(id);
+      } else {
+        width++;
+        bar.style.width = width + '%';
+      }
     }
   }
-}
+ });
+
 </script>
+
+window.addEventListener("load", function(event) {
+    console.log("All resources finished loading!");
+  });
 
 
 
