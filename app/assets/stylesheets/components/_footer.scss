@@ -1,0 +1,52 @@
+.footer {
+
+    bottom: 0;
+    width: 100%;
+    border-top: solid 1px white;
+    padding-top: 16px;
+    display: flex;
+    background: rgba(255, 255, 255, 0.3);
+    bottom: 0px;
+
+}
+
+
+.right {
+
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.right a {
+
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 06px;
+}
+
+
+.raw-tex {
+  margin-bottom: 10px;
+}
+
+
+.min-height {
+min-height: 83vh;
+}
+
+
+
