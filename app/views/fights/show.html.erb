@@ -73,7 +73,12 @@
         <div class="card">
           <div class="div-video">
             <div class="border-video">
+
+              <% if @fight.follower_score_challenger > @fight.follower_score_opponent%>
               <%= video_tag('battle2.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "300x300") %>
+              <% else %>
+              <%= video_tag('battle1.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "300x300") %>
+              <% end %>
           </div>
         </div>
       </div>
