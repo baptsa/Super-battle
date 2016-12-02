@@ -2,51 +2,51 @@
 .button-container {
   width: 300px;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .button-start {
-  border: 2px solid white;
-  border-radius: 2px;
+  border-radius: 1px;
   padding: 20px;
   background-color: #1FA8CF;
 }
 
 .btn-zguy {
+  width: 250px;
+  height: 70px;
   color: white;
   background-color: #1FA8CF;
   border: 0;
+  font-size: 50px;
 }
 
-
 .button-instagram {
-
-    position: relative;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
     background-color: #1FA8CF;
     width: 250px;
     height: 45px;
     text-decoration: none;
-    border: 1px solid white;
-
+    padding: 10px;
+    border-radius: 1px;
+    box-shadow: 10px 5px 5px #191BA9;
 }
 
 .button-instagram i {
-    position: absolute;
     color: white;
-    top: 0px;
-    left: 10px;
-    font-size: 43px;
+    font-size: 28px;
+    margin-left: 8px;
+    text-shadow: 2px 2px #1FA8CF;
 }
 
 .button-instagram p {
-      color: white;
-    position: absolute;
-    top: -16px;
-    width: 200px;
+    margin-top: auto;
+    margin-left: 8px;
+    color: white;
     font-size: 18px;
-    left: 46px;
-    top: 13px;
     font-family: "Contrail One", "cursive";
+    text-shadow: 2px 2px #1FA8CF;
 }
 
 

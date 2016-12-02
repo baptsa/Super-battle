@@ -4,25 +4,27 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-sm-4">
-      <div class="card">
-        <%= form_tag fights_path, method: :post do %>
-         <%= text_field_tag :challenger, nil, placeholder: "Challenger", class: "form-challenger" %>
+    <div class="container-form">
+      <div class="col-xs-6 col-sm-4">
+        <div class="card-users text-center">
+          <%= form_tag fights_path, method: :post do %>
+           <%= text_field_tag :challenger, nil, placeholder: "Challenger", class: "form-challenger" %>
+        </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card">
-        <div class="div-video">
-          <div class="border-video">
-            <%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "190x190") %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-video">
+          <div class="div-video">
+            <div class="border-video">
+              <%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "300x300") %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-xs-6 col-sm-4">
-      <div class="card">
-        <div>
-          <%= text_field_tag :opponent, nil, placeholder: "Opponent", class: "form-opponent" %>
+      <div class="col-xs-6 col-sm-4">
+        <div class="card-users text-center">
+          <div>
+            <%= text_field_tag :opponent, nil, placeholder: "Opponent", class: "form-opponent" %>
+          </div>
         </div>
       </div>
     </div>
@@ -33,7 +35,6 @@
   <div class="button-start text-center">
     <%= submit_tag "Let's fight!", class: "btn-zguy" %>
     <% end %>
-
   </div>
 </div>
 
