@@ -6,6 +6,7 @@
   <div class="row">
     <div class="container-form">
       <div class="col-xs-6 col-sm-4">
+      <h3 class="text-center">PLAYER 1</h3>
         <div class="card-users text-center">
           <%= form_tag fights_path, method: :post do %>
            <%= text_field_tag :challenger, nil, placeholder: "Challenger", class: "form-challenger" %>
@@ -21,10 +22,9 @@
         </div>
       </div>
       <div class="col-xs-6 col-sm-4">
+      <h3 class="text-center">PLAYER 2</h3>
         <div class="card-users text-center">
-          <div>
-            <%= text_field_tag :opponent, nil, placeholder: "Opponent", class: "form-opponent" %>
-          </div>
+          <%= text_field_tag :opponent, nil, placeholder: "Opponent", class: "form-opponent" %>
         </div>
       </div>
     </div>
