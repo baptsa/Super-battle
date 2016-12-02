@@ -85,64 +85,64 @@ class Score
 
   def engagement_score
     score = 0
-    engagement = @insta_user.engagement / @insta_user.followed_by
-    if @insta_user.followed_by < 100
-      if engagement < 0.1
+    engagement = (@insta_user.engagement.to_f / @insta_user.followed_by.to_f) * 100
+    # if @insta_user.followed_by < 100
+      if engagement < 1
         return score
-      elsif engagement < 0.2
+      elsif engagement < 5
         score += 2
-      elsif engagement < 0.3
+      elsif engagement < 8
         score += 10
-      elsif engagement < 0.4
+      elsif engagement < 10
         score += 25
-      elsif engagement < 0.5
+      elsif engagement < 12
         score += 30
-      elsif engagement >= 0.5
+      elsif engagement >= 13
         score += 40
       end
-    elsif @insta_user.followed_by >= 100 && @insta_user.followed_by < 500
-      if engagement < 0.08
-        return score
-      elsif engagement < 0.16
-        score += 2
-      elsif engagement < 0.2
-        score += 10
-      elsif engagement < 0.3
-        score += 25
-      elsif engagement < 0.4
-        score += 30
-      elsif engagement >= 0.5
-        score += 40
-      end
-    elsif @insta_user.followed_by >= 500 && @insta_user.followed_by < 5000
-      if engagement < 0.02
-        return score
-      elsif engagement < 0.04
-        score += 2
-      elsif engagement < 0.07
-        score += 10
-      elsif engagement < 0.1
-        score += 25
-      elsif engagement < 0.15
-        score += 30
-      elsif engagement >= 0.15
-        score += 40
-      end
-    elsif @insta_user.followed_by >= 5000
-      if engagement < 0.01
-        return score
-      elsif engagement < 0.02
-        score += 2
-      elsif engagement < 0.04
-        score += 10
-      elsif engagement < 0.07
-        score += 25
-      elsif engagement < 0.1
-        score += 30
-      elsif engagement >= 0.1
-        score += 40
-      end
-    end
+  #   elsif @insta_user.followed_by >= 100 && @insta_user.followed_by < 500
+  #     if engagement <
+  #       return score
+  #     elsif engagement < 0.16
+  #       score += 2
+  #     elsif engagement < 0.2
+  #       score += 10
+  #     elsif engagement < 0.3
+  #       score += 25
+  #     elsif engagement < 0.4
+  #       score += 30
+  #     elsif engagement >= 0.5
+  #       score += 40
+  #     end
+  #   elsif @insta_user.followed_by >= 500 && @insta_user.followed_by < 5000
+  #     if engagement < 0.02
+  #       return score
+  #     elsif engagement < 0.04
+  #       score += 2
+  #     elsif engagement < 0.07
+  #       score += 10
+  #     elsif engagement < 0.1
+  #       score += 25
+  #     elsif engagement < 0.15
+  #       score += 30
+  #     elsif engagement >= 0.15
+  #       score += 40
+  #     end
+  #   elsif @insta_user.followed_by >= 5000
+  #     if engagement < 0.01
+  #       return score
+  #     elsif engagement < 0.02
+  #       score += 2
+  #     elsif engagement < 0.04
+  #       score += 10
+  #     elsif engagement < 0.07
+  #       score += 25
+  #     elsif engagement < 0.1
+  #       score += 30
+  #     elsif engagement >= 0.1
+  #       score += 40
+  #     end
+  #   end
   end
 
 end
