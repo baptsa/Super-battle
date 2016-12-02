@@ -45,8 +45,8 @@
         <h2>Scores</h2>
           <div class="card-result-challenger">
             <p> Followers : <span id="score-followers-challenger"> <%= @fight.follower_score_challenger %> </span> </p>
-            <p> Engagement : <span> <%= @fight.engagement_score_challenger %> </span> </p>
             <p> Posts : <span> <%= @fight.media_score_challenger %> </span> </p>
+            <p> Engagement : <span> <%= @fight.engagement_score_challenger %> </span> </p>
             <h1 class=""> <span id="final-score-followers-challenger"> <%= @fight.final_score_challenger %> </span> </h1>
           </div>
         </div>
@@ -54,9 +54,9 @@
         <h2>Stats</h2>
           <div class="card-challenger">
           <p> Followers : <span> <%= @fight.challenger.followed_by %> </span> </p>
+          <p> Posts : <span> <%= @fight.challenger.media %> </span> </p>
           <p> Engagement per post<br>(likes + comments) : <span> <%= @fight.challenger.engagement %> </span> </p>
           <p> Engagement per post<br>per 100 followers : <span> <%= (( @fight.challenger.engagement.to_f / @fight.challenger.followed_by.to_f ) * 100).round(1) %> </span> </p>
-          <p> Posts : <span> <%= @fight.challenger.media %> </span> </p>
           </div>
         </div>
       </div>
@@ -67,17 +67,17 @@
         <h2>Stats</h2>
           <div class="card-opponent">
             <p> Followers : <span> <%= @fight.opponent.followed_by %> </span> </p>
+            <p> Posts : <span> <%= @fight.opponent.media %> </span> </p>
             <p> Engagement per post<br>(likes + comments) : <span> <%= @fight.opponent.engagement %> </span> </p>
             <p> Engagement per post<br>per 100 followers : <span> <%= (( @fight.opponent.engagement.to_f / @fight.opponent.followed_by.to_f ) * 100).round(1) %> </span> </p>
-            <p> Posts : <span> <%= @fight.opponent.media %> </span> </p>
           </div>
         </div>
         <div class="col-xs-6">
         <h2>Scores</h2>
           <div class="card-result-opponent">
             <p> Followers : <span> <%= @fight.follower_score_opponent %> </span> </p>
-            <p> Engagement : <span> <%= @fight.engagement_score_opponent %> </span> </p>
             <p> Posts : <span> <%= @fight.media_score_opponent %> </span> </p>
+            <p> Engagement : <span> <%= @fight.engagement_score_opponent %> </span> </p>
             <h1 class=""> <span id="final-score-followers-opponent"> <%= @fight.final_score_opponent %> </span> </h1>
           </div>
         </div>
