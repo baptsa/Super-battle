@@ -12,10 +12,6 @@
   </div>
 </div>
 
-<div class="text-center">
-  <button onclick="move()" class="btn btn-danger">Click Me</button>
-</div>
-
 <div class="container containers-show-score-bar">
   <div class="row">
     <div class="col-xs-12 col-sm-6 fighterchallenger text-center">
@@ -80,7 +76,7 @@
             <p> <span> <%= @fight.follower_score_opponent %> </span> </p>
             <p> <span> <%= @fight.engagement_score_opponent %> </span> </p>
             <p> <span> <%= @fight.media_score_opponent %> </span> </p>
-            <h1 class=""> <span> <%= @fight.final_score_opponent %> </span> </h1>
+            <h1 class=""> <span id="final-score-followers-opponent"> <%= @fight.final_score_opponent %> </span> </h1>
           </div>
         </div>
       </div>
@@ -90,25 +86,31 @@
 
 <script>
 
-function move() {
-  var bar = document.getElementById("myBar");
-  var width = 1;
-  var id = setInterval(frame, 40);
-  function frame() {
-    var score1 = Number($('#final-score-followers-challenger').text());
-    var new_score = score1 //follow_score
-    if (width >= new_score) {
-      clearInterval(id);
-    } else {
-      width++;
-      bar.style.width = width + '%';
+
+window.addEventListener("load", function(event) {
+  move('myBar', '#final-score-followers-challenger');
+  move('myBar1', '#final-score-followers-opponent');
+});
+
+function move(barSelector, selector) {
+  setTimeout(function () {
+    var bar = document.getElementById(barSelector);
+    var width = 1;
+    var id = setInterval(frame, 40);
+    function frame() {
+      var score1 = Number($(selector).text());
+      var new_score = score1 //follow_score
+      if (width >= new_score) {
+        clearInterval(id);
+      } else {
+        width += 0.4;
+        bar.style.width = width + '%';
+      }
     }
-  }
+  }, 400);
 }
+
 </script>
-
-
-
 
 
 
