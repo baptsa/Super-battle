@@ -1,23 +1,38 @@
-.card {
-  height: 200px;
-  position: relative;
+.container-form{
   display: flex;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-video {
+  height: 350px;
+  display: flex;
+  flex-flow: row;
   justify-content: center;
-  flex-direction: row;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.card-users {
+  width: 350px;
+  height: 70px;
 }
 
 .form-challenger {
-  position: absolute;
-  right: 0px;
-  top: 86px;
-  border: 2px solid #3498db;
+  padding: 5px;
+  border: 3px solid #D72323;
   border-radius: 2px;
+  width: 200px;
+  height: 70px;
 }
 
 .form-opponent {
-  position: absolute;
-  left: 0px;
-  top: 86px;
-  border: 2px solid #3498db;
+  padding: 5px;
+  border: 3px solid #191BA9;
   border-radius: 2px;
+  width: 200px;
+  height: 70px;
+  box-shadow: #1fa8cf;
 }
