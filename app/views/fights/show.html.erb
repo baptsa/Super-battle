@@ -35,7 +35,7 @@
   <div class="row">
     <div class="col-xs-4">
       <div class="text-center card-result-player1">
-        <h2> <%= @fight.challenger.username %></h2>
+        <h2> <%= @fight.challenger.username.upcase %></h2>
         <div class="table-stat">
           <table>
             <tr>
@@ -140,14 +140,14 @@
 
 <script>
 
-var timerScoreFollowers = 1500;
-var timerScorePosts = 3000;
-var timerScoreEngagement = 4500;
-var timerShowScore = 6500;
+var timerScoreFollowers = 1800;
+var timerScorePosts = 3600;
+var timerScoreEngagement = 5000;
+var timerShowScore = 6200;
 var timerWinnerName = 7000;
-var startBarMovement1 = 1000;
-var startBarMovement2 = 1000;
-var barLoop = 0.6;
+var startBarMovement1 = 1400;
+var startBarMovement2 = 1400;
+var barLoop = 0.7;
 
 window.addEventListener("load", function(event) {
   movebar1('progress-player1', '#final-score-followers-player1', '#final-score-followers-player2');
@@ -172,7 +172,7 @@ function show(selector, timer) {
 // lifebar Player 1
 function movebar1(barSelector1, selector1, selector2) {
   setTimeout(function () {
-    var bar1 = document.getElementById(barSelector1);
+    var bar = document.getElementById(barSelector1);
     var width = 100;
     var id = setInterval(frame, 40);
     function frame() {
@@ -188,46 +188,46 @@ function movebar1(barSelector1, selector1, selector2) {
         clearInterval(id);
         } else {
         width -= barLoop;
-        bar1.style.width = width + '%';
+        bar.style.width = width + '%';
         }
       } else {
         if (width <= barLoser) {
         clearInterval(id);
         } else {
         width -= barLoop;
-        bar1.style.width = width + '%';
+        bar.style.width = width + '%';
         }
       }
     }
   }, startBarMovement1);
 }
 
-//Lifebar Player 2
+//Lifebar Player 2 -- Code is repeating.. Just one variable that is changing..
 function movebar2(barSelector2, selector1, selector2) {
   setTimeout(function () {
-    var bar2 = document.getElementById(barSelector2);
+    var bar = document.getElementById(barSelector2);
     var width = 100;
     var id = setInterval(frame, 40);
     function frame() {
-      var score1 = Number($(selector1).text());
+      var score1 = Number($(selector1).text()); // enventually create a new method with these lines and call them in the function to avoid RY !
       var score2 = Number($(selector2).text());
       var maxScore = Math.max(score1, score2);
       var minScore = Math.min(score1, score2);
       var barWinner = ((maxScore - minScore) / maxScore) * 100;
       var barLoser = 0;
-      if (score2 > score1) {
+      if (maxScore === score2) {
         if (width <= barWinner) {
         clearInterval(id);
         } else {
         width -= barLoop;
-        bar2.style.width = width + '%';
+        bar.style.width = width + '%';
         }
       } else {
         if (width < barLoser) {
         clearInterval(id);
         } else {
         width -= barLoop;
-        bar2.style.width = width + '%';
+        bar.style.width = width + '%';
         }
       }
     }
