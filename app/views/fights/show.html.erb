@@ -75,9 +75,9 @@
             <div class="border-video">
 
               <% if @fight.follower_score_challenger > @fight.follower_score_opponent%>
-              <%= video_tag('battle2.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "300x300") %>
+              <%= video_tag('battle2.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
               <% else %>
-              <%= video_tag('battle1.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "300x300") %>
+              <%= video_tag('battle1.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
               <% end %>
           </div>
         </div>
@@ -169,28 +169,26 @@ function move(barSelector, selector) {
 function show1(selector) {
   setTimeout(function(){
     document.getElementById(selector).style.visibility = "visible";
-  },700);
+  },1000);
 }
-
 function show2(selector) {
   setTimeout(function(){
     document.getElementById(selector).style.visibility = "visible";
-  },1400);
+  },2000);
 }
-
 function show3(selector) {
   setTimeout(function(){
     document.getElementById(selector).style.visibility = "visible";
-  },2100);
+  },3000);
 }
-
 function show4(selector) {
   setTimeout(function(){
     document.getElementById(selector).style.visibility = "visible";
-  },2800);
+  },4000);
 }
-
 </script>
+
+
 
 
 
