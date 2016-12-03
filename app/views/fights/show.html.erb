@@ -13,7 +13,7 @@
     </div>
     <div class="col-xs-12 col-sm-6 text-center fighter-players">
       <div id="bar-player2">
-        <div id="progress-player2"><h1> <%= @fight.opponent.username %> </h1></div>
+        <div id="progress-player2"></div>
       </div>
       <div class="image-player2">
         <%= image_tag @fight.opponent.profile_picture, class: "avatar-large-player2" %>
@@ -23,10 +23,10 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" id="winner-name" style="visibility:hidden;">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <div id="winner-name" style="visibility:hidden;">
+      <div>
         <% if @fight.final_score_challenger > @fight.final_score_opponent %>
           <h1 class="player1-color"> #<%= @fight.challenger.username.upcase %> WINS </h1>
         <% else  %>
