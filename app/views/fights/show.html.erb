@@ -54,19 +54,19 @@
             <td>CATEGORY</td>
           </tr>
           <tr>
-            <td><span id="score-followers-challenger"><%= @fight.follower_score_challenger %> </span></td>
+            <td><span id="score-followers-challenger" style="visibility:hidden;"><%= @fight.follower_score_challenger %> </span></td>
             <td>Followers</td>
            </tr>
            <tr>
-            <td><%= @fight.media_score_challenger %></span></td>
-            <td>Posts</td>
+            <td id="score-media-challenger" style="visibility:hidden;" ><%= @fight.media_score_challenger %></span></td>
+            <td style="visibility:hidden;" >Posts</td>
            </tr>
            <tr>
-            <td><%= @fight.engagement_score_challenger %></span></td>
+            <td id="score-engagement-challenger" style="visibility:hidden;" ><%= @fight.engagement_score_challenger %></span></td>
             <td>Engagement</td>
            </tr>
         </table>
-        <h1 class=""> <span id="final-score-followers-challenger"> <%= @fight.final_score_challenger %> </span> </h1>
+        <h1 class=""> <span id="final-score-followers-challenger" style="visibility:hidden;"> <%= @fight.final_score_challenger %> </span> </h1>
       </div>
     </div>
     <div class="col-xs-4">
@@ -75,9 +75,9 @@
             <div class="border-video">
 
               <% if @fight.follower_score_challenger > @fight.follower_score_opponent%>
-              <%= video_tag('battle2.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "300x300") %>
+              <%= video_tag('battle2.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
               <% else %>
-              <%= video_tag('battle1.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "300x300") %>
+              <%= video_tag('battle1.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
               <% end %>
           </div>
         </div>
@@ -112,19 +112,19 @@
             <td>CATEGORY</td>
           </tr>
           <tr>
-            <td><span id="score-followers-challenger"><%= @fight.follower_score_opponent %> </span></td>
+            <td id="score-followers-opponent" style="visibility:hidden;"><span><%= @fight.follower_score_opponent %> </span></td>
             <td>Followers</td>
            </tr>
            <tr>
-            <td><%= @fight.media_score_opponent %></span></td>
+            <td id="score-media-opponent" style="visibility:hidden;"><%= @fight.media_score_opponent %></span></td>
             <td>Posts</td>
            </tr>
            <tr>
-            <td><%= @fight.engagement_score_opponent %></span></td>
+            <td id="score-engagement-opponent" style="visibility:hidden;"><%= @fight.engagement_score_opponent %></span></td>
             <td>Engagement</td>
            </tr>
         </table>
-        <h1 class=""> <span id="final-score-followers-opponent"> <%= @fight.final_score_opponent %> </span> </h1>
+        <h1 class=""> <span id="final-score-followers-opponent" style="visibility:hidden;""> <%= @fight.final_score_opponent %> </span> </h1>
       </div>
     </div>
   </div>
@@ -137,6 +137,15 @@
 window.addEventListener("load", function(event) {
   move('myBar', '#final-score-followers-challenger');
   move('myBar1', '#final-score-followers-opponent');
+  show1('score-followers-challenger');
+  show1('score-followers-opponent');
+  show2('score-media-challenger');
+  show2('score-media-opponent');
+  show3('score-engagement-challenger');
+  show3('score-engagement-opponent');
+  show4('final-score-followers-challenger');
+  show4('final-score-followers-opponent');
+
 });
 
 function move(barSelector, selector) {
@@ -157,7 +166,29 @@ function move(barSelector, selector) {
   }, 400);
 }
 
+function show1(selector) {
+  setTimeout(function(){
+    document.getElementById(selector).style.visibility = "visible";
+  },1000);
+}
+function show2(selector) {
+  setTimeout(function(){
+    document.getElementById(selector).style.visibility = "visible";
+  },2000);
+}
+function show3(selector) {
+  setTimeout(function(){
+    document.getElementById(selector).style.visibility = "visible";
+  },3000);
+}
+function show4(selector) {
+  setTimeout(function(){
+    document.getElementById(selector).style.visibility = "visible";
+  },4000);
+}
 </script>
+
+
 
 
 
