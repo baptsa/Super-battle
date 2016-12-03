@@ -1,19 +1,17 @@
 <div class="container containers-show-score-bar">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 fighter-players text-center">
+     <div class="col-xs-12 col-sm-6 fighter-players text-center">
       <div id="bar-player1">
         <div id="progress-player1"></div>
       </div>
       <div class="image-player1">
         <%= image_tag @fight.challenger.profile_picture, class: "avatar-large-player1" %>
       </div>
-      <div>
-        <p id="player1-name"><%= @fight.challenger.username %></p>
-      </div> <!-- play here with divs to get responsive on each side automatically -->
+      <%= @fight.challenger.username %>
     </div>
     <div class="col-xs-12 col-sm-6 text-center fighter-players">
       <div id="bar-player2">
-        <div id="progress-player2"><h1> <%= @fight.opponent.username %> </h1></div>
+        <div id="progress-player2"></div>
       </div>
       <div class="image-player2">
         <%= image_tag @fight.opponent.profile_picture, class: "avatar-large-player2" %>
@@ -23,10 +21,10 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" id="winner-name" style="visibility:hidden;">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <div id="winner-name" style="visibility:hidden;">
+      <div>
         <% if @fight.final_score_challenger > @fight.final_score_opponent %>
           <h1 class="player1-color"> #<%= @fight.challenger.username.upcase %> WINS </h1>
         <% else  %>
@@ -146,14 +144,15 @@
 
 <script>
 
+// putting the script in another file ?
 var timerScoreFollowers = 1800;
 var timerScorePosts = 3600;
 var timerScoreEngagement = 5000;
 var timerShowScore = 6200;
-var timerWinnerName = 7000;
+var timerWinnerName = 6700;
 var startBarMovement1 = 1400;
 var startBarMovement2 = 1400;
-var barLoop = 0.7;
+var barLoop = 0.7; //
 
 window.addEventListener("load", function(event) {
   movebar1('progress-player1', '#final-score-followers-player1', '#final-score-followers-player2');
