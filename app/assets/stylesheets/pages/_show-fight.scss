@@ -1,9 +1,9 @@
-.fighterchallenger {
+.fighter-player1 {
   position: relative;
   margin-bottom: 11vh;
 }
 
-#myProgress {
+#my-progress1 {
     position: absolute;
     left: 41%;
     top: 118%;
@@ -12,26 +12,31 @@
     border: 1px solid #E84A5F;
     border-radius: 10px;
 }
-#myBar {
+#my-bar1 {
   float: left;
-  width: 0%;
+  width: 101%;
   height: 100%;
   background-color: #E84A5F;
+  border-radius: 10px;
 }
 
-.imagechallenger {
+.player1 {
   position: absolute;
   top: 0%;
   left: 23%;
 }
 
-.imagechallenger1 {
+.player2 {
   position: absolute;
   top: 0%;
   left: 59%;
 }
 
-#myProgress1 {
+.hide {
+  visibility:hidden;
+}
+
+#my-progress2 {
   position: absolute;
   left: 11%;
   top: 118%;
@@ -40,11 +45,13 @@
   border: 1px solid #574B90;
   border-radius: 10px;
 }
-#myBar1 {
+
+#my-bar2 {
   float: right;
-  width: 0%;
+  width: 101%;
   height: 100%;
   background-color: #574B90;
+  border-radius: 10px;
 }
 
 .containers-show-animation {
@@ -59,7 +66,7 @@
   margin-top: 10px;
 }
 
-#challenger-name {
+#player1-name {
   padding-left: 13%;
   margin: 0px;
 }
@@ -69,24 +76,24 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
-  .imagechallenger {
+  .image-player1 {
     position: absolute;
     top: 0%;
     left: 25%;
   }
-  #challenger-name {
+  #player1-name {
   padding-left: 10%;
   }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) {
-  .imagechallenger {
+  .image-player1 {
     position: absolute;
     top: 0%;
     left: 29%;
   }
-  #challenger-name {
+  #player1-name {
   padding-left: 8%;
   }
 }
