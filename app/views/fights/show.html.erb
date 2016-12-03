@@ -1,24 +1,32 @@
 <div class="container containers-show-score-bar">
   <div class="row">
     <div class="col-xs-12 col-sm-6 fighter-players text-center">
-      <div id="my-progress1">
-        <div id="my-bar1"></div>
+      <div id="bar-player1">
+        <div id="progress-player1"></div>
       </div>
       <div class="image-player1">
         <%= image_tag @fight.challenger.profile_picture, class: "avatar-large-player1" %>
       </div>
       <div>
         <p id="player1-name"><%= @fight.challenger.username %></p>
-      </div>
+      </div> <!-- play here with divs to get responsive on each side automatically -->
     </div>
     <div class="col-xs-12 col-sm-6 text-center fighter-players">
-      <div id="my-progress2">
-        <div id="my-bar2"></div>
+      <div id="bar-player2">
+        <div id="progress-player2"> <%= @fight.opponent.username %></div>
       </div>
       <div class="image-player2">
         <%= image_tag @fight.opponent.profile_picture, class: "avatar-large-player2" %>
       </div>
       <%= @fight.opponent.username %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <div> <h1 id="winner-name" style="visibility:hidden;"> ... WINS !</h1> </div>
     </div>
   </div>
 </div>
@@ -130,50 +138,35 @@
   </div>
 </div>
 
-
 <script>
 
+var timerScoreFollowers = 1500;
+var timerScorePosts = 3000;
+var timerScoreEngagement = 4500;
+var timerShowScore = 6500;
+var timerWinnerName = 7000;
+var startBarMovement1 = 1000;
+var startBarMovement2 = 1000;
+var barLoop = 0.6;
+
 window.addEventListener("load", function(event) {
-  movebar1('my-bar1', '#final-score-followers-player1', '#final-score-followers-player2');
-  movebar2('my-bar2', '#final-score-followers-player1', '#final-score-followers-player2');
-  show1('score-followers-player1');
-  show1('score-followers-player2');
-  show2('score-media-player1');
-  show2('score-media-player2');
-  show3('score-engagement-player1');
-  show3('score-engagement-player2');
-  show4('final-score-followers-player1');
-  show4('final-score-followers-player2');
+  movebar1('progress-player1', '#final-score-followers-player1', '#final-score-followers-player2');
+  movebar2('progress-player2', '#final-score-followers-player1', '#final-score-followers-player2');
+  show('score-followers-player1', timerScoreFollowers);
+  show('score-followers-player2', timerScoreFollowers);
+  show('score-media-player1',timerScorePosts);
+  show('score-media-player2',timerScorePosts);
+  show('score-engagement-player1',timerScoreEngagement);
+  show('score-engagement-player2',timerScoreEngagement);
+  show('final-score-followers-player1',timerShowScore);
+  show('final-score-followers-player2',timerShowScore);
+  show('winner-name', timerWinnerName);
 });
 
-var timerShow1 = 1000;
-var timerShow2 = 2000;
-var timerShow3 = 3000;
-var timerShow4 = 4000;
-var timeOurPlayer1 = 1000;
-var timeOurPlayer2 = 1000;
-var barLoop = 0.5;
-
-
-function show1(selector) {
+function show(selector, timer) {
   setTimeout(function(){
     document.getElementById(selector).style.visibility = "visible";
-  },timerShow1);
-}
-function show2(selector) {
-  setTimeout(function(){
-    document.getElementById(selector).style.visibility = "visible";
-  },timerShow2);
-}
-function show3(selector) {
-  setTimeout(function(){
-    document.getElementById(selector).style.visibility = "visible";
-  },timerShow3);
-}
-function show4(selector) {
-  setTimeout(function(){
-    document.getElementById(selector).style.visibility = "visible";
-  },timerShow4);
+  },timer);
 }
 
 // lifebar Player 1
@@ -206,7 +199,7 @@ function movebar1(barSelector1, selector1, selector2) {
         }
       }
     }
-  }, timeOurPlayer1);
+  }, startBarMovement1);
 }
 
 //Lifebar Player 2
@@ -238,65 +231,9 @@ function movebar2(barSelector2, selector1, selector2) {
         }
       }
     }
-  }, timeOurPlayer2);
+  }, startBarMovement2);
 }
 </script>
-
-
-<!-- function move1(barSelector1, selector1, selector2) {
-  setTimeout(function () {
-    var bar1 = document.getElementById(barSelector1);
-    // var bar2 = document.getElementById(barSelector2);
-    var width = 100;
-    var id = setInterval(frame, 40);
-
-    function frame() {
-      var score1 = Number($(selector1).text());
-      var score2 = Number($(selector2).text());
-      // calculation here
-      var maxScore = Math.max(score1, score2);
-      var minScore = Math.min(score1, score2);
-      var barWinner = (maxScore - minScore) / maxScore;
-      var barLoser = 0;
-
-      if (score1 > score2) {
-        if (width <= barWinner) {
-        clearInterval(id);
-        } else {
-        width -= 0.4;
-        bar1.style.width = width + '%';
-        }
-      } else {
-        if (width < barLoser) {
-        clearInterval(id);
-        } else {
-        width -= 0.4;
-        bar1.style.width = width + '%';
-        }
-      }
-    }
-  }, 400);
-} -->
-
-
-<!-- function move(barSelector, selector) {
-  setTimeout(function () {
-    var bar = document.getElementById(barSelector);
-    var width = 1;
-    var id = setInterval(frame, 40);
-    function frame() {
-      var score1 = Number($(selector).text());
-      var new_score = score1 //follow_score
-      if (width >= new_score) {
-        clearInterval(id);
-      } else {
-        width += 0.4;
-        bar.style.width = width + '%';
-      }
-    }
-  }, 400);
-} -->
-
 
 
 
