@@ -1,5 +1,5 @@
 
-.card-result-challenger {
+.card-result-player1 {
   background-color: #E84A5F;
   height: 360px;
   color: white;
@@ -9,7 +9,7 @@
   margin-bottom: 30px;
 }
 
-.card-result-challenger h1 {
+.card-result-player1 h1 {
   position: absolute;
   margin: 0;
   bottom: 0;
@@ -18,7 +18,7 @@
   margin-bottom: -20px;
 }
 
-.card-result-challenger table {
+.card-result-player1 table {
   position: absolute;
   margin: 0;
   bottom: 0;
@@ -27,7 +27,7 @@
   margin-right: 5px;
 }
 
-.card-result-opponent {
+.card-result-player2 {
   background-color: #574B90;
   color: white;
   height: 360px;
@@ -36,8 +36,7 @@
   position: relative;
 }
 
-
-.card-result-opponent h1 {
+.card-result-player2 h1 {
   position: absolute;
   margin: 0;
   bottom: 0;
@@ -46,7 +45,7 @@
   margin-bottom: -20px;
 }
 
-.card-result-opponent table {
+.card-result-player2 table {
   position: absolute;
   margin: 0;
   bottom: 0;
