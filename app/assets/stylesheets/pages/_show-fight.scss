@@ -1,16 +1,16 @@
-.fighter-player1 {
+.fighter-players {
   position: relative;
-  margin-bottom: 11vh;
+  margin-bottom: 7%;
 }
 
 #my-progress1 {
-    position: absolute;
-    left: 41%;
-    top: 118%;
-    width: 50%;
-    height: 30px;
-    border: 1px solid #E84A5F;
-    border-radius: 10px;
+  position: absolute;
+  left: 41%;
+  top: 118%;
+  width: 50%;
+  height: 30px;
+  border: 1px solid #E84A5F;
+  border-radius: 10px;
 }
 #my-bar1 {
   float: left;
@@ -20,13 +20,13 @@
   border-radius: 10px;
 }
 
-.player1 {
+.image-player1 {
   position: absolute;
   top: 0%;
   left: 23%;
 }
 
-.player2 {
+.image-player2 {
   position: absolute;
   top: 0%;
   left: 59%;
