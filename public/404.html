@@ -4,7 +4,75 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+
+  @import url(//fonts.googleapis.com/css?family=Contrail+One);
+
   body {
+    background-color: #FED149;
+    background-size: cover !important;
+    text-align: center;
+    font-family: Contrail One;
+  }
+
+  .title-style {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px #1FA8CF;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  } -->
+
+  .title {
+    margin-top: 3%;
+    color: grey;
+    margin-bottom: 5%;
+  }
+
+  </style>
+</head>
+
+<a style="display:block; text-decoration: none; color: grey" href="#">
+<body>
+  <!-- This file lives in public/404.html -->
+
+  <div class="title">
+    <div class="col-xs-12 col-sm-4">
+      <h1> We guess you weren't looking for this page.. </h1>
+      <h2> To get back to fighting, CLICK ANYWHERE :)</h2>
+    </div>
+  </div>
+
+
+  <div class="dialog">
+    <div class="col-xs-12 col-sm-4" src="#">
+      <video width="400" autoplay loop poster="img-battle.png">
+        <source src="battle3.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+  </div>
+</body>
+</a>
+</html>
+
+
+<!-- ------------ -->
+
+<!--   body {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,18 +118,5 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
+  } -->
 
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
-</html>
