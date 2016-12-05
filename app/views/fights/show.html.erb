@@ -41,7 +41,6 @@
 
 <div class="container-results containers-show-animation">
   <div class="results-red">
-  <h3> Followers : <%= @fight.challenger.followed_by %></h3>
     <div class="table-score-red">
       <table>
         <tr>
@@ -64,10 +63,9 @@
          </tr>
       </table>
     </div>
-    <h1 class=""><span id="final-score-followers-player1" style="visibility:hidden;"> <%= @fight.final_score_challenger %> </span> </h1>
+    <h1 class=""><span id="final-score-followers-player1" style="visibility:hidden;"> <%= @fight.final_score_challenger %></span></h1>
   </div>
   <div class="results-blue">
-  <h3> Followers : <%= @fight.opponent.followed_by %></h3>
     <div class="table-score-blue">
       <table>
         <tr>
