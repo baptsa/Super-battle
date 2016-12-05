@@ -1,4 +1,3 @@
-// putting the script in another file ? // Let it stay here temporarily, and then add it back to show fight...!
 var timerScoreFollowers = 1800;
 var timerScorePosts = 3600;
 var timerScoreEngagement = 5000;
@@ -38,7 +37,6 @@ $( "#score-followers-player2" ).hover(
   function() {
     $(this).popover({ content: "This is calculated based on" });
   });
-
 
 // lifebar Player 1
 function movebar1(barSelector1, selector1, selector2) {
@@ -104,6 +102,8 @@ function movebar2(barSelector2, selector1, selector2) {
     }
   }, startBarMovement2);
 }
+
+
 
 
   // setTimeout(function() {

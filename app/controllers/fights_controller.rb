@@ -2,8 +2,8 @@ class FightsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @fights = Fight.all # trop de fights (what if 100000 fights)
-    current_user.fights
+    # @fights = Fight.all # trop de fights (what if 100000 fights)
+    @fights = current_user.fights
   end
 
   def show
