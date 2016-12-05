@@ -7,6 +7,13 @@ class User < ApplicationRecord
   has_many :fights, dependent: :destroy
   has_one :insta_user, dependent: :destroy
 
+  def username
+    if self.insta_user
+      insta_user.username
+    else
+      "Unknown"
+    end
+  end
 
   def self.find_for_instagram_oauth(auth)
     user_params = auth.slice(:provider, :uid)

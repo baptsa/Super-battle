@@ -1,6 +1,6 @@
-<% content_for :meta_title, "#{@current_user.username}" %>
-<% content_for :meta_description, "#{toi aussi viens défier tes amis ! }" %>
-<% content_for :meta_image, @current_user.profile_picture %>
+<% content_for :meta_title, "#{@fight.challenger.username} VS #{@fight.opponent.username}" %>
+<% content_for :meta_description, "Challenge your friends ! " %>
+<% content_for :meta_image, @fight.challenger.profile_picture %>
 
 
 <div class="container containers-show-score-bar">
