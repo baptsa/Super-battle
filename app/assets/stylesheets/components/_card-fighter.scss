@@ -15,8 +15,9 @@
 
 .results-red h1 {
   position: absolute;
-  right: 200px;
   font-size: 80px;
+  right: 200px;
+  text-shadow: 2px 2px 2px black;
 }
 
 .results-red h2 {
@@ -38,6 +39,8 @@
   position: absolute;
   left: 200px;
   font-size: 80px;
+  left: 200px;
+  text-shadow: 2px 2px 2px black;
 }
 
 .results-blue h2 {
@@ -52,14 +55,7 @@
 
 .video-position {
   position: absolute;
-  left: 37%;
-}
-
-.table-score-red {
-  width: 390px;
-  font-size: 40px;
-  margin-left: 65px;
-  margin-top: 40px
+  left: 508px;
 }
 
 .table-score-red i {
@@ -73,9 +69,43 @@
 }
 
 .table-score-blue {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table-score-blue table {
   text-align: right;
   width: 390px;
   font-size: 40px;
-  margin-left: 220px;
+  margin-right: 65px;
   margin-top: 40px
+}
+
+.table-score-red {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.table-score-red table {
+  text-align: left;
+  width: 390px;
+  font-size: 40px;
+  margin-left: 65px;
+  margin-top: 40px
+}
+
+.table-score-red a {
+  color: white;
+  margin: 0;
+}
+
+.table-score-blue a {
+  color: white;
+  margin: 0;
+}
+
+.modal-details {
+  border: 10px solid #1fa8cf;
+  border-radius: 5px;
+  padding: 20px;
 }
