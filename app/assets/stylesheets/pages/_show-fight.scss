@@ -7,13 +7,6 @@
   margin-bottom: 11vh;
 }
 
-.player1-color {
-  color: #E84A5F;
-}
-
-.player2-color {
-  color: #574B90;
-}
 
 #bar-player1 {
   position: absolute;
@@ -22,7 +15,7 @@
   width: 50%;
   height: 30px;
   border: 1px solid #E84A5F;
-  border-radius: 10px;
+  background-color: #e2e1df;
 }
 
 #progress-player1 {
@@ -30,7 +23,6 @@
   width: 101%;
   height: 100%;
   background-color: #E84A5F;
-  border-radius: 10px;
 }
 
 .image-player1 {
@@ -52,7 +44,7 @@
   width: 50%;
   height: 30px;
   border: 1px solid #574B90;
-  border-radius: 10px;
+  background-color: #e2e1df;
 }
 
 #progress-player2 {
@@ -60,13 +52,11 @@
   width: 101%;
   height: 100%;
   background-color: #574B90;
-  border-radius: 10px;
 }
 
 .containers-show-animation {
-  margin-top: 7vh;
-}
-
+  margin-top: 10px;
+  }
 .containers-show-score-bar {
   margin-top: 3vh;
 }
@@ -106,6 +96,8 @@
   padding-left: 8%;
   }
 }
+
+
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: $screen-lg-min) {  }
