@@ -1,7 +1,18 @@
 <div>
-  <h1> Ça va ? </h1>
-  <% @fights.each do |fight| %>
-  <%= fight.challenger_id.username %>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-6 text-center">
+      <% @fights.each do |fight| %>
+      <h2><%= fight.challenger.username %></h2>
+      <%= image_tag fight.challenger.profile_picture, class: "avatar-large-player1" %>
+      <h2><%= fight.final_score_challenger %></h2>
+      <% end %>
+    </div>
+    <div class="col-xs-6 text-center">
+      <% @fights.each do |fight| %>
+      <h2><%= fight.opponent.username %></h2>
+      <%= image_tag fight.opponent.profile_picture, class: "avatar-large-player2" %>
+      <h2><%= fight.final_score_opponent %></h2>
+      <% end %>
+    </div>
+  </div>
 </div>
-
