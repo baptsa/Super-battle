@@ -27,11 +27,11 @@ function show(selector, timer) {
   },timer);
 }
 
-$('document').ready(function() {
-  $('#score-followers-player2').popover({
-    content: "This is calculated based on"
-  });
-});
+// $('document').ready(function() {
+  // $('#score-followers-player2').popover({
+    // content: "This is calculated based on"
+  // });
+// });
 
 $( "#score-followers-player2" ).hover(
   function() {
