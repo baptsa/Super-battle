@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'about', to: 'pages#about'
   get 'privacy', to: 'pages#privacy'
+  get 'autocomplete', to: 'insta_users#autocomplete'
   resources :fights, only: [:index, :new, :show, :create]
   resources :insta_users, only: [:new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
