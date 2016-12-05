@@ -8,13 +8,6 @@ var startBarMovement1 = 1400;
 var startBarMovement2 = 1400;
 var barLoop = 0.7; //
 
-  // setTimeout(function() {
-  //   alert(" WE DON'T LIKE HOW YOU ARE USING INSTAGRAM AND YOU WILL NOT GET ACCESS OUR API, SORRY GUYS ! BE CAREFULL WITH YOUR GITHUB SETTINGS...");
-  // }, 8000);
-  // setTimeout(function() {
-  //   window.location = "https://soundcloud.com/fantastic-mister-zguy";
-  // }, 15000);
-
 window.addEventListener("load", function(event) {
   movebar1('progress-player1', '#final-score-followers-player1', '#final-score-followers-player2');
   movebar2('progress-player2', '#final-score-followers-player1', '#final-score-followers-player2');
@@ -112,6 +105,13 @@ function movebar2(barSelector2, selector1, selector2) {
   }, startBarMovement2);
 }
 
+
+  // setTimeout(function() {
+  //   alert(" WE DON'T LIKE HOW YOU ARE USING INSTAGRAM AND YOU WILL NOT GET ACCESS OUR API, SORRY GUYS ! BE CAREFULL WITH YOUR GITHUB SETTINGS...");
+  // }, 8000);
+  // setTimeout(function() {
+  //   window.location = "https://soundcloud.com/fantastic-mister-zguy";
+  // }, 15000);
 
 
 
