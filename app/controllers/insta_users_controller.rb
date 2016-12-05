@@ -1,7 +1,7 @@
 class InstaUsersController < ApplicationController
 
   def new
-    @insta_user = InstraUser.new()
+    @insta_user = InstaUser.new()
   end
 
 
