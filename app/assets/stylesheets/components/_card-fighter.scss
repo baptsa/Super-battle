@@ -1,66 +1,68 @@
 
-.card-result-player1 {
-  background-color: #E84A5F;
-  height: 360px;
-  color: white;
-  border-radius: 4px;
-  padding: 10px;
+.container-results {
+  display: flex;
+  min-width: 100%;
+  height: 350px;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
-.card-result-player1 h1 {
-  position: absolute;
-  margin: 0;
-  bottom: 0;
-  left: 0px;
-  font-size: 100px;
-  margin-bottom: -20px;
+.results-red {
+  flex: 0 0 50%;
+  background-color: #E84A5F;
+  color: white;
 }
 
-.card-result-player1 table {
-  position: absolute;
-  margin: 0;
-  bottom: 0;
-  right: 0px;
-  margin-bottom: 0px;
-  margin-right: 5px;
+.results-red h2 {
+  margin-left: 10px;
 }
 
-.card-result-player2 {
+.results-red h3 {
+  margin-left: 10px;
+}
+
+.results-blue {
+  flex: 0 0 50%;
   background-color: #574B90;
   color: white;
-  height: 360px;
-  border-radius: 4px;
-  padding: 10px;
-  position: relative;
 }
 
-.card-result-player2 h1 {
+.results-blue h2 {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.results-blue h3 {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.video-position {
   position: absolute;
-  margin: 0;
-  bottom: 0;
-  right: 0;
-  font-size: 100px;
-  margin-bottom: -20px;
+  left: 37%;
 }
 
-.card-result-player2 table {
-  position: absolute;
-  margin: 0;
-  bottom: 0;
-  left: 0px;
-  margin-bottom: 0px;
-  margin-left: 5px;
+.table-score-red {
+  width: 390px;
+  font-size: 40px;
+  margin-left: 65px;
+  margin-top: 40px
 }
 
-.table-stat table {
-position: relative;
-width: 300px;
-
+.table-score-red i {
+  font-size: 20px;
+  margin: 10px;
 }
 
-.table-stat table td {
-padding: 5px
+.table-score-blue i {
+  font-size: 20px;
+  margin: 10px;
 }
 
+.table-score-blue {
+  text-align: right;
+  width: 390px;
+  font-size: 40px;
+  margin-left: 220px;
+  margin-top: 40px
+}

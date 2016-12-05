@@ -35,112 +35,64 @@
   </div>
 </div>
 
-<div class="container containers-show-animation ">
-  <div class="row">
-    <div class="col-xs-4">
-      <div class="text-center card-result-player1">
-        <h2> <%= @fight.challenger.username.upcase %></h2>
-        <div class="table-stat">
-          <table>
-            <tr>
-              <td>Followers : </td>
-              <td><span> <%= @fight.challenger.followed_by %> </span></td>
-            </tr>
-            <tr>
-              <td>Posts : </td>
-              <td><span> <%= @fight.challenger.media %> </span></td>
-            </tr>
-            <tr>
-              <td>Engagement per post <br> (likes + comments) : </td>
-              <td><span> <%= @fight.challenger.engagement %> </span></td>
-            </tr>
-            <tr>
-              <td>Engagement per post <br> per 100 followers : </td>
-              <td><span> <%= (( @fight.challenger.engagement.to_f / @fight.challenger.followed_by.to_f ) * 100).round(1) %> </span></td>
-            </tr>
-          </table>
-        </div>
-        <table>
-          <tr>
-            <td>SCORE</td>
-            <td>CATEGORY</td>
-          </tr>
-          <tr>
-            <td id="score-followers-player1" style="visibility:hidden;"><span><%= @fight.follower_score_challenger %> </span></td>
-            <td>Followers</td>
-           </tr>
-           <tr>
-            <td id="score-media-player1" style="visibility:hidden;" ><%= @fight.media_score_challenger %></span></td>
-            <td>Posts</td>
-           </tr>
-           <tr>
-            <td id="score-engagement-player1" style="visibility:hidden;" ><%= @fight.engagement_score_challenger %></span></td>
-            <td>Engagement</td>
-           </tr>
-        </table>
-        <h1 class=""> <span id="final-score-followers-player1" style="visibility:hidden;"> <%= @fight.final_score_challenger %> </span> </h1>
-      </div>
-    </div>
-    <div class="col-xs-4">
-        <div class="card">
-          <div class="div-video">
-            <div class="border-video">
-
-              <% if @fight.follower_score_challenger > @fight.follower_score_opponent%>
-              <%= video_tag('battle2.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
-              <% else %>
-              <%= video_tag('battle1.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
-              <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-4">
-      <div class="text-center card-result-player2">
-        <h2> <%= @fight.opponent.username %></h2>
-          <div class="table-stat">
-            <table>
-              <tr>
-                <td>Followers : </td>
-                <td><span> <%= @fight.opponent.followed_by %> </span></td>
-              </tr>
-              <tr>
-                <td>Posts : </td>
-                <td><span> <%= @fight.opponent.media %> </span></td>
-              </tr>
-              <tr>
-                <td>Engagement per post <br> (likes + comments) : </td>
-                <td><span> <%= @fight.opponent.engagement %> </span></td>
-              </tr>
-              <tr>
-                <td>Engagement per post <br> per 100 followers : </td>
-                <td><span> <%= (( @fight.opponent.engagement.to_f / @fight.opponent.followed_by.to_f ) * 100).round(1) %> </span></td>
-              </tr>
-            </table>
-          </div>
-        <table>
-          <tr>
-            <td>SCORE</td>
-            <td>CATEGORY</td>
-          </tr>
-          <tr>
-            <td id="score-followers-player2" data-trigger="hover" style="visibility:hidden;"><span><%= @fight.follower_score_opponent %> </span></td>
-            <td>Followers</td>
-           </tr>
-           <tr>
-            <td id="score-media-player2" style="visibility:hidden;"><%= @fight.media_score_opponent %></span></td>
-            <td>Posts</td>
-           </tr>
-           <tr>
-            <td id="score-engagement-player2" style="visibility:hidden;"><%= @fight.engagement_score_opponent %></span></td>
-            <td>Engagement</td>
-           </tr>
-        </table>
-        <h1 class=""> <span id="final-score-followers-player2" style="visibility:hidden;""> <%= @fight.final_score_opponent %> </span> </h1>
-      </div>
+<div class="container-results containers-show-animation">
+  <div class="results-red">
+  <h3> Followers : <%= @fight.challenger.followed_by %></h3>
+    <table class="table-score-red">
+      <tr>
+        <td>Followers Score<i class="fa fa-question-circle-o" aria-hidden="true"></i></td>
+        <td id="score-followers-player1" style="visibility:hidden;"><span><%= @fight.follower_score_challenger %> </span></td>
+       </tr>
+       <tr>
+        <td>Posts Score<i class="fa fa-question-circle-o" aria-hidden="true"></i></td>
+        <td id="score-media-player1" style="visibility:hidden;" ><%= @fight.media_score_challenger %></span></td>
+       </tr>
+       <tr>
+        <td>Engagement Score<i class="fa fa-question-circle-o" aria-hidden="true"></i></td>
+        <td id="score-engagement-player1" style="visibility:hidden;" ><%= @fight.engagement_score_challenger %></span></td>
+       </tr>
+    </table>
+  </div>
+  <div class="results-blue">
+  <h3> Followers : <%= @fight.opponent.followed_by %></h3>
+    <table class="table-score-blue">
+      <tr>
+        <td id="score-followers-player2" data-trigger="hover" style="visibility:hidden;"><span><%= @fight.follower_score_opponent %> </span></td>
+        <td>Followers Score<i class="fa fa-question-circle-o" aria-hidden="true"></i></td>
+       </tr>
+       <tr>
+        <td id="score-media-player2" style="visibility:hidden;"><%= @fight.media_score_opponent %></span></td>
+        <td>Posts Score<i class="fa fa-question-circle-o" aria-hidden="true"></i></td>
+       </tr>
+       <tr>
+        <td id="score-engagement-player2" style="visibility:hidden;"><%= @fight.engagement_score_opponent %></span></td>
+        <td>Engagement Score<i class="fa fa-question-circle-o" aria-hidden="true"></i></td>
+       </tr>
+    </table>
+  </div>
+  <div class="video-position">
+  <div class="div-video">
+    <div class="border-video">
+      <% if @fight.follower_score_challenger > @fight.follower_score_opponent%>
+      <%= video_tag('battle2.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
+      <% else %>
+      <%= video_tag('battle1.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
+      <% end %>
     </div>
   </div>
 </div>
+</div>
 
-<script scr="fight_show_ page.js"></script>
+<h1 class="text-center">SHARE THE RESULTS !!</h1>
+<div class="container">
+  <div class="container-share">
+    <h3 class="text-center"><i class="fa fa-facebook-official" aria-hidden="true"></i></h3>
+    <h3><i class="fa fa-twitter" aria-hidden="true"></i></h3>
+    <h3><i class="fa fa-instagram" aria-hidden="true"></i></h3>
+  </div>
+</div>
+
+
+
+
 
