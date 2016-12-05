@@ -27,12 +27,12 @@
 
 <div class="container" id="winner-name" style="visibility:hidden;">
   <div class="row">
-    <div class="col-xs-12 text-center">
+    <div class="text-center title-style">
       <div>
         <% if @fight.final_score_challenger > @fight.final_score_opponent %>
-          <h1 class="player1-color"> #<%= @fight.challenger.username.upcase %> WINS </h1>
+          <h1 class="title-style"> #<%= @fight.challenger.username.upcase %> WINS </h1>
         <% else  %>
-          <h1 class="player2-color"> #<%= @fight.opponent.username.upcase %> WINS </h1>
+          <h1 class="title-style"> #<%= @fight.opponent.username.upcase %> WINS </h1>
         <% end %>
       </div>
     </div>
@@ -56,6 +56,7 @@
         <td id="score-engagement-player1" style="visibility:hidden;" ><%= @fight.engagement_score_challenger %></span></td>
        </tr>
     </table>
+    <h1 class=""> <span id="final-score-followers-player1" style="visibility:hidden;"> <%= @fight.final_score_challenger %> </span> </h1>
   </div>
   <div class="results-blue">
   <h3> Followers : <%= @fight.opponent.followed_by %></h3>
@@ -73,6 +74,7 @@
         <td>Engagement Score<i class="fa fa-question-circle-o" aria-hidden="true"></i></td>
        </tr>
     </table>
+    <h1 class=""><span id="final-score-followers-player2" style="visibility:hidden;"> <%= @fight.final_score_opponent %> </span> </h1>
   </div>
   <div class="video-position">
   <div class="div-video">
@@ -87,12 +89,22 @@
 </div>
 </div>
 
-<h1 class="text-center">SHARE THE RESULTS !!</h1>
-<div class="container">
-  <div class="container-share">
-    <h3 class="text-center"><i class="fa fa-facebook-official" aria-hidden="true"></i></h3>
-    <h3><i class="fa fa-twitter" aria-hidden="true"></i></h3>
-    <h3><i class="fa fa-instagram" aria-hidden="true"></i></h3>
+<div class="container-share">
+  <h1 class="text-center title-style">SHARE THE RESULTS !!</h1>
+  <div class="share">
+    <h3 class="text-center"><i class="fa fa-facebook-official title-style" aria-hidden="true"></i></h3>
+    <h3><i class="fa fa-twitter title-style" aria-hidden="true"></i></h3>
+    <h3><i class="fa fa-instagram title-style" aria-hidden="true"></i></h3>
+  </div>
+  <h3 class="title-style text-center">Or with the following link !</h3>
+  <h3 class="title-style text-center">www.share-your-battle/65.com</h3>
+</div>
+
+<a href="/">
+<div class="button-container">
+  <div class="button-start text-center">
+    <%= submit_tag "New fight !", class: "btn-zguy" %>
   </div>
 </div>
+</a>
 
