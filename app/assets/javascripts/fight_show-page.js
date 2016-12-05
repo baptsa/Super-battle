@@ -105,7 +105,6 @@ function movebar2(barSelector2, selector1, selector2) {
 
 
 
-
   // setTimeout(function() {
   //   alert(" WE DON'T LIKE HOW YOU ARE USING INSTAGRAM AND YOU WILL NOT GET ACCESS OUR API, SORRY GUYS ! BE CAREFULL WITH YOUR GITHUB SETTINGS...");
   // }, 8000);
