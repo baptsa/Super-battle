@@ -26,11 +26,6 @@
 }
 
 .card-hover {
-  a {
-    color: #fed149;
-    text-shadow: 2px 2px 2px #574b90;
-    text-decoration: none;
-  }
   transition: opacity 0.4s ease;
   display: flex;
   position: absolute;
@@ -49,6 +44,12 @@
 }
 
 .card-hover:hover {
+  a {
+  color: #fed149;
+  text-shadow: 2px 2px 2px #574b90;
+  border:none;
+  outline:none;
+  }
   opacity: 1;
 }
 
