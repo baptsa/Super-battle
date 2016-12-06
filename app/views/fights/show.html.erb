@@ -1,6 +1,6 @@
 <% content_for :meta_title, "#{@fight.challenger.username} VS #{@fight.opponent.username}" %>
-<% content_for :meta_description, "Challenge your friends ! " %>
-<% content_for :meta_image, @fight.challenger.profile_picture %>
+<% content_for :meta_description, "Quickly generate fights between Instagram accounts with Super-Battle" %>
+<% content_for :meta_image, image_path("super-battle-sharing.jpeg") %>
 
 <div class="container containers-show-score-bar">
   <div class="row">
@@ -105,7 +105,7 @@
 <div class="container-share">
   <h1 class="text-center title-style">SHARE THE RESULTS !!</h1>
   <div class="share">
-    <h3 class="text-center"><i class="fa fa-facebook-official title-style" aria-hidden="true"></i></h3>
+    <h3 id="fb-sharer"><i class="fa fa-facebook-official title-style" aria-hidden="true"></i></h3>
     <h3><i class="fa fa-twitter title-style" aria-hidden="true"></i></h3>
     <h3><i class="fa fa-instagram title-style" aria-hidden="true"></i></h3>
   </div>
@@ -147,79 +147,94 @@
 
 <script>
   var timerScoreFollowers = 1800;
-var timerScorePosts = 3600;
-var timerScoreEngagement = 5000;
-var timerShowScore = 6200;
-var timerWinnerName = 6700;
-var barTimer = 1400;
-var barLoop = 0.7; //
+  var timerScorePosts = 3600;
+  var timerScoreEngagement = 5000;
+  var timerShowScore = 6200;
+  var timerWinnerName = 6700;
+  var barTimer = 1400;
+  var barLoop = 0.7; //
 
-window.addEventListener("load", function(event) {
-  movebar1('progress-player1', '#final-score-followers-player1', '#final-score-followers-player2');
-  movebar1('progress-player2', '#final-score-followers-player2', '#final-score-followers-player1');
-  show(timerScoreFollowers, 'score-followers-player1', 'score-followers-player2' );
-  show(timerScorePosts, 'score-media-player1', 'score-media-player2');
-  show(timerScoreEngagement, 'score-engagement-player1', 'score-engagement-player2');
-  show(timerShowScore, 'final-score-followers-player1', 'final-score-followers-player2');
-  show('winner-name', timerWinnerName);
-});
+  window.addEventListener("load", function(event) {
+    movebar1('progress-player1', '#final-score-followers-player1', '#final-score-followers-player2');
+    movebar1('progress-player2', '#final-score-followers-player2', '#final-score-followers-player1');
+    show(timerScoreFollowers, 'score-followers-player1', 'score-followers-player2' );
+    show(timerScorePosts, 'score-media-player1', 'score-media-player2');
+    show(timerScoreEngagement, 'score-engagement-player1', 'score-engagement-player2');
+    show(timerShowScore, 'final-score-followers-player1', 'final-score-followers-player2');
+    show('winner-name', timerWinnerName);
+  });
 
 
-function show(timer, selector1, selector2) {
-  setTimeout(function(){
-    document.getElementById(selector1).style.visibility = "visible";
-    document.getElementById(selector2).style.visibility = "visible";
-  },timer);
-}
+  function show(timer, selector1, selector2) {
+    setTimeout(function(){
+      document.getElementById(selector1).style.visibility = "visible";
+      document.getElementById(selector2).style.visibility = "visible";
+    },timer);
+  }
 
-// lifebar Players
-function movebar1(barSelector, scoreBar, otherScore) {
-  setTimeout(function () {
-    var bar = document.getElementById(barSelector);
-    var width = 100;
-    var id = setInterval(frame, 40);
-    function frame() {
-      var score1 = Number($(scoreBar).text());
-      var score2 = Number($(otherScore).text());
-      var maxScore = Math.max(score1, score2);
-      var minScore = Math.min(score1, score2);
-      var barWinner = ((maxScore - minScore) / maxScore) * 100;
-      var barLoser = 0;
-      if (maxScore === Number($(scoreBar).text())) {
-        if (width <= barWinner) {
-        clearInterval(id);
+  // lifebar Players
+  function movebar1(barSelector, scoreBar, otherScore) {
+    setTimeout(function () {
+      var bar = document.getElementById(barSelector);
+      var width = 100;
+      var id = setInterval(frame, 40);
+      function frame() {
+        var score1 = Number($(scoreBar).text());
+        var score2 = Number($(otherScore).text());
+        var maxScore = Math.max(score1, score2);
+        var minScore = Math.min(score1, score2);
+        var barWinner = ((maxScore - minScore) / maxScore) * 100;
+        var barLoser = 0;
+        if (maxScore === Number($(scoreBar).text())) {
+          if (width <= barWinner) {
+          clearInterval(id);
+          } else {
+          width -= barLoop;
+          bar.style.width = width + '%';
+          }
         } else {
-        width -= barLoop;
-        bar.style.width = width + '%';
-        }
-      } else {
-        if (width <= barLoser) {
-        clearInterval(id);
-        } else {
-        width -= barLoop;
-        bar.style.width = width + '%';
+          if (width <= barLoser) {
+          clearInterval(id);
+          } else {
+          width -= barLoop;
+          bar.style.width = width + '%';
+          }
         }
       }
-    }
-  }, barTimer);
-}
-
-  // setTimeout(function() {
-  //   alert(" WE DON'T LIKE HOW YOU ARE USING INSTAGRAM AND YOU WILL NOT GET ACCESS OUR API, SORRY GUYS ! BE CAREFULL WITH YOUR GITHUB SETTINGS...");
-  // }, 8000);
-  // setTimeout(function() {
-  //   window.location = "https://soundcloud.com/fantastic-mister-zguy";
-  // }, 15000);
-
-  // $('document').ready(function() {
-  //   $('#score-followers-player2').popover({
-  //     content: "This is calculated based on"
-  //   });
-  // });
-
-  // $( "#score-followers-player2" ).hover(
-  //   function() {
-  //     $(this).popover({ content: "This is calculated based on" });
-  //   });
-
+    }, barTimer);
+  }
 </script>
+<%= content_for(:after_js) do %>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : "1176076832469650",
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+  </script>
+  <script>
+    $('#fb-sharer').click(function() {
+      FB.ui({
+        method: 'share',
+        display: 'popup',
+        href: window.location.href,
+      }, function(response){});
+    })
+    // $(function() {
+    //   $('#fb-sharer').on('click', function() {
+    //     window.open("https://www.facebook.com/sharer/sharer.php?u=" + window.location.href, "width=600, height=400, scrollbars=no");
+    //   });
+    // });
+  </script>
+<% end %>
