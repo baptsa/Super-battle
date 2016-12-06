@@ -2,6 +2,7 @@ require "scraper"
 
 class FightsController < ApplicationController
   skip_before_action :authenticate_user!
+  helper_method :winner_name
 
   def index
     # @fights = Fight.all
@@ -22,7 +23,6 @@ class FightsController < ApplicationController
 
     @challenger = Scraper.new.scrap(params[:challenger])
     @opponent = Scraper.new.scrap(params[:opponent])
-
     # 1.2) L'insta-user  n'existe pas => on le crée
     # 2) on calcule les scores des insta user
     # @challenger = InstaUser.find(params[:fight][:challenger_id])
@@ -55,6 +55,15 @@ class FightsController < ApplicationController
     else
       raise
       render :new
+    end
+  end
+
+  def winner_name
+    @fight = Fight.find(params[:id])
+    if @fight.final_score_challenger > @fight.final_score_opponent
+        @fight.challenger.username.upcase
+    else
+        @fight.opponent.username.upcase
     end
   end
 
