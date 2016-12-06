@@ -1,7 +1,8 @@
 class Fight < ApplicationRecord
-  belongs_to :challenger, :class_name => 'InstaUser', :foreign_key => :challenger_id, optional: true
-  belongs_to :opponent, :class_name => 'InstaUser', :foreign_key => :opponent_id, optional: true
-  belongs_to :user
+  belongs_to :challenger, :class_name => 'InstaUser', :foreign_key => :challenger_id
+  belongs_to :opponent, :class_name => 'InstaUser', :foreign_key => :opponent_id
+
+  belongs_to :user, optional: true
 
   has_many :insta_users
 

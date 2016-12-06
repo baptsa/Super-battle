@@ -1,6 +1,7 @@
 class InstaUser < ApplicationRecord
-  # belongs_to :user
- # has_one :user, dependent: :destroy
+  # belongs_to :user, optional: true
+
+  # has_one :user, dependent: :destroy
   has_many :fights_as_competitor, class_name: "Fight", foreign_key: :opponent_id, dependent: :destroy
   has_many :fights_as_challenger, class_name: "Fight", foreign_key: :challenger_id, dependent: :destroy
 
