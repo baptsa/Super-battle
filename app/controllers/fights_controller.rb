@@ -24,7 +24,7 @@ class FightsController < ApplicationController
     @challenger = Scraper.new.scrap(params[:challenger])
     @opponent = Scraper.new.scrap(params[:opponent])
 
-    if !@challenger || !@oppenent
+    if !@challenger || !@opponent
       flash[:alert] = "The username you have entered does not exist, retry!"
       return redirect_to root_path
     end

@@ -32,7 +32,7 @@ class Scraper
       end
 
       return insta_user
-    rescue OpenURI::HTTPError => e
+        rescue OpenURI::HTTPError => e
       return false
     end
   end
