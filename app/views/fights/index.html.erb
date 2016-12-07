@@ -1,18 +1,26 @@
 <div>
+  <% @fights.each_with_index do |fight, i| %>
   <div class="row">
-    <div class="col-xs-6 text-center">
-      <% @fights.each do |fight| %>
-      <h2><%= fight.challenger.username %></h2>
-      <%= image_tag fight.challenger.profile_picture, class: "avatar-large-player1" %>
-      <h2><%= fight.final_score_challenger %></h2>
-      <% end %>
+
+    <div class="col-xs-2 text-center">
+      <% d = Time.at(fight.created_at.to_i) %>
+      <%= d.strftime("%d/%m - %H:%M") %>
     </div>
-    <div class="col-xs-6 text-center">
-      <% @fights.each do |fight| %>
-      <h2><%= fight.opponent.username %></h2>
-      <%= image_tag fight.opponent.profile_picture, class: "avatar-large-player2" %>
-      <h2><%= fight.final_score_opponent %></h2>
-      <% end %>
+    <div class="col-xs-8 ">
+      <div>
+        <div class="show-home-block">
+          <%= image_tag fight.challenger.profile_picture, class: "avatar-fights-index" %>
+          <%= fight.challenger.username %>
+          <%= fight.final_score_challenger %>
+        </div>
+        <div class="show-home-block">
+          <%= image_tag fight.opponent.profile_picture, class: "avatar-fights-index" %>
+          <%= fight.opponent.username %>
+          <%= fight.final_score_opponent %>
+        </div>
+      </div>
     </div>
+
   </div>
+  <% end %>
 </div>
