@@ -39,7 +39,7 @@ InstaUser.create!({
 
 
 InstaUser.create!({
-  username:          "Shakira-Shakira",
+  username:          "shakira",
   profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/15101730_833344936808672_3706769398803988480_a.jpg",
   first_name:        "shakira",
   last_name:         "shakira",
@@ -109,11 +109,11 @@ InstaUser.create!({
 })
 
 
-fight1 = Fight.create!(challenger_id: 1, opponent_id: 2)
-fight2 = Fight.create!(challenger_id: 1, opponent_id: 2)
-fight3 = Fight.create!(challenger_id: 3, opponent_id: 4)
-fight4 = Fight.create!(challenger_id: 3, opponent_id: 4)
-Fight.create!(challenger_id: 5, opponent_id: 1)
+# fight1 = Fight.create!(challenger_id: 1, opponent_id: 2)
+# fight2 = Fight.create!(challenger_id: 1, opponent_id: 2)
+# fight3 = Fight.create!(challenger_id: 3, opponent_id: 4)
+# fight4 = Fight.create!(challenger_id: 3, opponent_id: 4)
+# Fight.create!(challenger_id: 5, opponent_id: 1)
 
 
 # beyonce = InstaUser.create!(username: "Beyonce", profile_picture: "url", first_name:"Beyoncé", last_name:"Beyoncé", bio:"coucou c'est beyoncé", media:8, follow:10, followed_by:30, user_id:jo.id )

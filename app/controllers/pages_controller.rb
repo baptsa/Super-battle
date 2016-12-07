@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
 
   def home
+    @suggested_insta_users = InstaUser.all
   end
 
   def privacy

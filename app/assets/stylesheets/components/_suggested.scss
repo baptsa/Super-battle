@@ -1,0 +1,35 @@
+.suggested {
+  position: relative;
+    display: flex;
+    flex-flow: column;
+    width: 600px;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .suggested {
+    margin-top: 0px;
+    left: 0;
+  }
+}
+
+.list-item {
+
+}
+
+
+#insta-results {
+}
+
+.insta-suggestions-1 {
+  position: relative;
+  width: 350px;
+  .results {
+    position: absolute;
+    top: 0;
+    left: 75px;
+    width: 200px;
+  }
+}
