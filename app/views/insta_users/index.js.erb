@@ -1,0 +1,4 @@
+$('#insta-results').html('');
+<% @insta_users.each do |insta_user| %>
+  $('#insta-results').append("<div><%= insta_user.username %></div>");
+<% end %>
