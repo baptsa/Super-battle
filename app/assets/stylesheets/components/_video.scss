@@ -1,9 +1,3 @@
-.div-video {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-}
-
 .styled_video_container {
   border-radius: 50%;
   text-align: center;
@@ -54,17 +48,21 @@
 }
 
 .video-position {
-  position: absolute;
+  display: flex;
+  position: relative;
+  top: -350px;
+  flex-flow: row;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  left: 0;
-  right: 0;
-  width: 100%;
+  width: 400px;
 }
 
 @media screen and (max-width: 900px) {
   .video-position {
-    position: fixed;
+    top: 0;
   }
 }
+
+
 
