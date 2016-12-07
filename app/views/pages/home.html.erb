@@ -7,21 +7,28 @@
       <%= form_tag fights_path, method: :post do %>
        <%= text_field_tag :challenger, nil, placeholder: "Player1", class: "form-player1" %>
     </div>
+    <div class="insta-suggestions-1">
+      <div class="results">
+      </div>
+    </div>
   </div>
   <div class="user-form">
   <h3 class="text-center">PLAYER 2</h3>
     <div class="card-users text-center">
       <%= text_field_tag :opponent, nil, placeholder: "Player2", class: "form-player2" %>
     </div>
+    <div class="insta-suggestions-2">
+      <div class="results">
+      </div>
+    </div>
   </div>
 </div>
 
-  <div class="card-video text-center">
-      <div class="border-video">
-        <%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "300x300") %>
-      </div>
+<div class="card-video text-center">
+  <div class="border-video">
+    <%= video_tag('battle3.mp4', class: "styled_video_container", autoplay: true, loop: true, size: "300x300") %>
   </div>
-
+</div>
 
 <div class="button-container">
   <div class="button-start text-center">
@@ -29,19 +36,6 @@
     <% end %>
   </div>
 </div>
-
-
-  <div class="suggested">
-  <h3 class="text-center">Suggested account</h3>
-    <% @suggested_insta_users.each do |suggestion| %>
-      <div class="list-item">
-        <%= link_to %>
-        <%= image_tag suggestion.profile_picture, class: "avatar-medium" %> - <%= suggestion.username %>
-      </div>
-    <% end %>
-  </div>
-
-
 
 
 <div class="container">
@@ -61,15 +55,8 @@
 <%= content_for :after_js do %>
   <script>
     $(document).ready(function(){
-      $(".form-player1").on("keyup", function(event) {
-        // Code executed when a form is submitted
-        var username = $(this).val();
-        $.ajax({
-          type: "GET",
-          dataType: "script",
-          url: "<%= insta_users_path %>" + "?username=" + username
-        });
-      });
+      autocomplete("1", "<%= insta_users_path %>");
+      autocomplete("2", "<%= insta_users_path %>");
     });
   </script>
 <% end %>

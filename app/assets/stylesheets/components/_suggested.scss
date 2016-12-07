@@ -21,6 +21,15 @@
 
 
 #insta-results {
-  width: 200px;
-  margin: 0 auto;
+}
+
+.insta-suggestions-1 {
+  position: relative;
+  width: 350px;
+  .results {
+    position: absolute;
+    top: 0;
+    left: 75px;
+    width: 200px;
+  }
 }

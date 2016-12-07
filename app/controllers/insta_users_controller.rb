@@ -3,6 +3,7 @@ class InstaUsersController < ApplicationController
 
   def index
     @insta_users = InstaUser.where("username iLIKE ?", "%#{params[:username]}%")
+    @player = params[:player] # 1 ou 2
     respond_to do |format|
       format.html
       format.js
