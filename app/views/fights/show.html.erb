@@ -102,7 +102,10 @@
   <h1 class="text-center title-style">SHARE THE RESULTS !!</h1>
   <div class="share">
     <h3 id="fb-sharer"><i class="fa fa-facebook-official title-style" aria-hidden="true"></i></h3>
-    <h3><i class="fa fa-twitter title-style" aria-hidden="true"></i></h3>
+    <h3>
+      <a href="https://twitter.com/intent/tweet?text=" + window.location.href title="Share on Twitter" target="_blank"><i class="fa fa-twitter title-style"></i></a>
+    </h3>
+    <!-- <h3 class="twitter-share-button"><i class="fa fa-twitter title-style" href="https://twitter.com/intent/tweet?text=Hello%20world" aria-hidden="true"></i></h3> -->
     <h3><i class="fa fa-instagram title-style" aria-hidden="true"></i></h3>
   </div>
   <h3 class="title-style text-center">Or with the following link !</h3>
@@ -243,5 +246,22 @@
     //     window.open("https://www.facebook.com/sharer/sharer.php?u=" + window.location.href, "width=600, height=400, scrollbars=no");
     //   });
     // });
+  </script>
+  <script>
+    window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));
   </script>
 <% end %>
