@@ -23,6 +23,11 @@ class FightsController < ApplicationController
 
     @challenger = Scraper.new.scrap(params[:challenger])
     @opponent = Scraper.new.scrap(params[:opponent])
+
+    if !@challenger || !@oppenent
+      flash[:alert] = "The username you have entered does not exist, retry!"
+      return redirect_to root_path
+    end
     # 1.2) L'insta-user  n'existe pas => on le crée
     # 2) on calcule les scores des insta user
     # @challenger = InstaUser.find(params[:fight][:challenger_id])
