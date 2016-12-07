@@ -2,7 +2,11 @@ class InstaUsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @insta_users = InstaUser.where("username iLIKE ?", "%#{params[:username]}%")
+    if params[:username].blank?
+      @insta_users = []
+    else
+      @insta_users = InstaUser.where("username iLIKE ?", "%#{params[:username]}%")
+    end
     @player = params[:player] # 1 ou 2
     respond_to do |format|
       format.html
