@@ -37,7 +37,7 @@
 
 <div class="container-results containers-show-animation">
   <div class="results-red">
-    <div class="table-score-red">
+    <div class="table-score-red stretchLeft">
       <table>
         <tr>
           <td>Followers Score</td>
@@ -62,7 +62,7 @@
     <h1 class=""><span id="final-score-followers-player1" style="visibility:hidden;"> <%= @fight.final_score_challenger %></span></h1>
   </div>
   <div class="results-blue">
-    <div class="table-score-blue">
+    <div class="table-score-blue stretchRight">
       <table>
         <tr>
           <td id="score-followers-player2" style="visibility:hidden;">
@@ -82,7 +82,7 @@
     </div>
     <h1 class=""><span id="final-score-followers-player2" style="visibility:hidden;"> <%= @fight.final_score_opponent %></span></h1>
   </div>
-  <div class="video-position">
+  <div class="video-position tossing">
     <div class="div-video">
       <div class="border-video">
         <div class="card-hover">
@@ -124,7 +124,7 @@
       <div class="row">
         <div class="col-xs-6">
           <h2 class="text-center"><%= @fight.challenger.username.upcase %></h2>
-          <h3 class="text-center">Followers : <%= @fight.challenger.followed_by %></h3>
+          <h3 class="text-center" id="separator"><%= @fight.challenger.followed_by %></h3>
           <h3 class="text-center">Following :  <%= @fight.challenger.follow %></h3>
           <h3 class="text-center">Posts :  <%= @fight.challenger.media %></h3>
           <h3 class="text-center">Engagement : <%= @fight.challenger.engagement %></h3>
@@ -158,8 +158,14 @@
     show(timerScoreEngagement, 'score-engagement-player1', 'score-engagement-player2');
     show(timerShowScore, 'final-score-followers-player1', 'final-score-followers-player2');
     show(timerWinnerName, 'winner-name');
+    numberWithCommas('#separator');
   });
 
+  function numberWithCommas(x) {
+      var parts = x.toString().split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return parts.join(".");
+  }
 
   function show(timer, selector1, selector2) {
     setTimeout(function(){
