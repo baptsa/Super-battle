@@ -37,7 +37,7 @@
 
 <div class="container-results containers-show-animation">
   <div class="results-red">
-    <div class="table-score-red stretchLeft">
+    <div class="table-score-red">
       <table>
         <tr>
           <td>Followers Score</td>
@@ -62,7 +62,7 @@
     <h1 class=""><span id="final-score-followers-player1" style="visibility:hidden;"> <%= @fight.final_score_challenger %></span></h1>
   </div>
   <div class="results-blue">
-    <div class="table-score-blue stretchRight">
+    <div class="table-score-blue">
       <table>
         <tr>
           <td id="score-followers-player2" style="visibility:hidden;">
@@ -122,19 +122,30 @@
     <div class="modal-content modal-details">
       <h1 class="text-center">FIGHT DETAILS</h1>
       <div class="row">
-        <div class="col-xs-6">
-          <h2 class="text-center"><%= @fight.challenger.username.upcase %></h2>
-          <h3 class="text-center" id="separator"><%= @fight.challenger.followed_by %></h3>
-          <h3 class="text-center">Following :  <%= @fight.challenger.follow %></h3>
-          <h3 class="text-center">Posts :  <%= @fight.challenger.media %></h3>
-          <h3 class="text-center">Engagement : <%= @fight.challenger.engagement %></h3>
+        <div class="col-xs-4">
+          <div class="stat-challenger">
+            <h2 class="text-center"><%= @fight.challenger.username.upcase %></h2>
+            <h3 class="text-center"><%= @fight.challenger.followed_by %></h3>
+            <h3 class="text-center"><%= @fight.challenger.follow %></h3>
+            <h3 class="text-center"><%= @fight.challenger.media %></h3>
+            <h3 class="text-center"><%= @fight.challenger.engagement %></h3>
+          </div>
         </div>
-        <div class="col-xs-6">
-          <h2 class="text-center"><%= @fight.opponent.username.upcase %></h2>
-          <h3 class="text-center">Followers : <%= @fight.opponent.followed_by %></h3>
-          <h3 class="text-center">Following :  <%= @fight.opponent.follow %></h3>
-          <h3 class="text-center">Posts :  <%= @fight.opponent.media %></h3>
-          <h3 class="text-center">Engagement : <%= @fight.opponent.engagement %></h3>
+        <div class="col-xs-4">
+          <h2 class="text-center">STATS</h2>
+          <h3 class="text-center">FOLLOWERS</h3>
+          <h3 class="text-center">FOLLOWING</h3>
+          <h3 class="text-center">POSTS</h3>
+          <h3 class="text-center">ENGAGEMENT PER POST</h3>
+        </div>
+        <div class="col-xs-4">
+          <div class="stat-opponent">
+            <h2 class="text-center"><%= @fight.opponent.username.upcase %></h2>
+            <h3 class="text-center"><%= @fight.opponent.followed_by %></h3>
+            <h3 class="text-center"><%= @fight.opponent.follow %></h3>
+            <h3 class="text-center"><%= @fight.opponent.media %></h3>
+            <h3 class="text-center"><%= @fight.opponent.engagement %></h3>
+          </div>
         </div>
       </div>
     </div>
@@ -158,14 +169,8 @@
     show(timerScoreEngagement, 'score-engagement-player1', 'score-engagement-player2');
     show(timerShowScore, 'final-score-followers-player1', 'final-score-followers-player2');
     show(timerWinnerName, 'winner-name');
-    numberWithCommas('#separator');
   });
 
-  function numberWithCommas(x) {
-      var parts = x.toString().split(".");
-      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      return parts.join(".");
-  }
 
   function show(timer, selector1, selector2) {
     setTimeout(function(){
