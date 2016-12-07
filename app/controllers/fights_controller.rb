@@ -20,7 +20,6 @@ class FightsController < ApplicationController
 
   def create
     # 1) Instantier les 2 insta user
-
     @challenger = Scraper.new.scrap(params[:challenger])
     @opponent = Scraper.new.scrap(params[:opponent])
     # 1.2) L'insta-user  n'existe pas => on le crée
@@ -38,7 +37,6 @@ class FightsController < ApplicationController
     @opponent_media_score = @opponent_score.media_score
     @opponent_engagement_score = @opponent_score.engagement_score
     @opponent_final_score = @opponent_follower_score + @opponent_media_score + @opponent_engagement_score
-
     # 3) On créee la fight
     @fight = Fight.new(
       challenger_id: @challenger.id, follower_score_challenger: @challenger_follower_score, media_score_challenger: @challenger_media_score,
