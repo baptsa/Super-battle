@@ -29,7 +29,7 @@
   <div class="row">
     <div class="text-center title-style">
       <div>
-        <h1 class="title-style"> @<%= winner_name %> WINS</h1>
+        <h1 class="title-style"> <%= winner_name %></h1>
       </div>
     </div>
   </div>
@@ -82,7 +82,7 @@
     </div>
     <h1 class=""><span id="final-score-followers-player2" style="visibility:hidden;"> <%= @fight.final_score_opponent %></span></h1>
   </div>
-  <div class="video-position tossing">
+  <div class="video-position">
     <div class="div-video">
       <div class="border-video">
         <div class="card-hover">
@@ -159,7 +159,7 @@
   var timerShowScore = 6200;
   var timerWinnerName = 6700;
   var barTimer = 1400;
-  var barLoop = 0.7; //
+  var barLoop = 0.5; //
 
   window.addEventListener("load", function(event) {
     movebar1('progress-player1', '#final-score-followers-player1', '#final-score-followers-player2');
@@ -184,7 +184,7 @@
     setTimeout(function () {
       var bar = document.getElementById(barSelector);
       var width = 100;
-      var id = setInterval(frame, 40);
+      var id = setInterval(frame, 27);
       function frame() {
         var score1 = Number($(scoreBar).text());
         var score2 = Number($(otherScore).text());
