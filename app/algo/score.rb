@@ -85,7 +85,7 @@ class Score
 
   def engagement_score
     score = 0
-    engagement = (@insta_user.engagement.to_f / @insta_user.followed_by.to_f) * 100
+    engagement = @insta_user.engagement
     # if @insta_user.followed_by < 100
       if engagement < 1
         return score
