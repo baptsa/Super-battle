@@ -44,7 +44,7 @@ class FightsController < ApplicationController
     @opponent_final_score = @opponent_follower_score + @opponent_media_score + @opponent_engagement_score
     # 3) On créee la fight
 
-    if @opponent_final_score == 0 || @challenger_final_score == 0
+ if @opponent_final_score == 0 || @challenger_final_score == 0
       flash[:alert] = "The username you have entered is private, try another username, like Beyonce !"
       return redirect_to root_path
     end
