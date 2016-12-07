@@ -1,5 +1,5 @@
 .container-share {
-  margin-top: 45px;
+  margin-top: -300px;
   margin-bottom: 45px;
   width: 500px;
   margin-left: auto;
@@ -17,4 +17,10 @@
 .share i {
   font-size: 40px;
   margin: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .container-share {
+    margin-top: 0;
+  }
 }
