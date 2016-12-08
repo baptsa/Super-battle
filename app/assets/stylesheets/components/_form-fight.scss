@@ -6,7 +6,7 @@
   align-items: center;
   width-max: 100%;
   position: relative;
-  top: 80px;
+  top: 35px;
 }
 
 .card-video {
@@ -42,8 +42,6 @@
   box-shadow: #1fa8cf;
 }
 
-
-
 @media screen and (max-width: 900px) {
   .container-form {
   position: relative;
@@ -70,6 +68,7 @@
     height: 70px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5px;
   }
 }
 

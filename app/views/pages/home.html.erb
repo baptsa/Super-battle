@@ -1,12 +1,11 @@
 <h1 class="text-center title-style"> Who'll win the Instagram Battle? </h1>
 
+<%= form_tag fights_path, method: :post do %>
 <div class="container-form">
   <div class="user-form">
     <h3 class="text-center">PLAYER 1</h3>
     <div class="card-users text-center">
-      <%= form_tag fights_path, method: :post do %>
-       <%= text_field_tag :challenger, nil, placeholder: "Player1", :autocomplete => :off, class: "form-player1" %>
-       <%= hidden_field_tag :username %>
+       <%= text_field_tag :challenger, nil, placeholder: "username player 1", :autocomplete => :off, class: "form-player1" %>
     </div>
     <div class="insta-suggestions-1">
       <div class="results">
@@ -16,7 +15,7 @@
   <div class="user-form">
   <h3 class="text-center">PLAYER 2</h3>
     <div class="card-users text-center">
-      <%= text_field_tag :opponent, nil, placeholder: "Player2", :autocomplete => :off, class: "form-player2" %>
+      <%= text_field_tag :opponent, nil, placeholder: "username player2", :autocomplete => :off, class: "form-player2" %>
     </div>
     <div class="insta-suggestions-2">
       <div class="results">
@@ -34,9 +33,9 @@
 <div class="button-container">
   <div class="button-start text-center">
     <%= submit_tag "Let's fight!", class: "btn-zguy" %>
-    <% end %>
   </div>
 </div>
+<% end %>
 
 
 <div class="container">

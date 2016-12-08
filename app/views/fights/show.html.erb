@@ -89,7 +89,7 @@
     <div class="card-hover">
      <a href="#" data-toggle="modal" data-target=".modal-fight"><h1>FIGHT DETAILS</h1></a>
     </div>
-      <% if @fight.follower_score_challenger > @fight.follower_score_opponent%>
+      <% if @fight.final_score_challenger > @fight.final_score_opponent%>
       <%= video_tag('battle2.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
       <% else %>
       <%= video_tag('battle1.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
@@ -97,13 +97,15 @@
   </div>
 </div>
 
-<div class="container-share">
-  <h1 class="text-center title-style">SHARE THE RESULTS !!</h1>
-  <div class="share">
-    <h3 id="fb-sharer"><i class="fa fa-facebook-official title-style" aria-hidden="true"></i></h3>
-    <h3>
-      <a href="https://twitter.com/intent/tweet?text=<%= "#{@fight.challenger.username} VS #{@fight.opponent.username} : #{@fight.winner_name} #{request.original_url}" %>" title="Share on Twitter" target="_blank"><i class="fa fa-twitter title-style"></i></a>
-    </h3>
+<div class="flex-share">
+  <div class="container-share">
+    <h1 class="text-center title-style">SHARE THE RESULTS !!</h1>
+    <div class="share">
+      <h3 id="fb-sharer"><i class="fa fa-facebook-official title-style" aria-hidden="true"></i></h3>
+      <h3>
+        <a href="https://twitter.com/intent/tweet?text=<%= "#{@fight.challenger.username} VS #{@fight.opponent.username} : #{@fight.winner_name} #{request.original_url}" %>" title="Share on Twitter" target="_blank"><i class="fa fa-twitter title-style"></i></a>
+      </h3>
+    </div>
   </div>
 </div>
 
