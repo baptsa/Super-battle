@@ -5,7 +5,7 @@
     <h3 class="text-center">PLAYER 1</h3>
     <div class="card-users text-center">
       <%= form_tag fights_path, method: :post do %>
-       <%= text_field_tag :challenger, nil, placeholder: "Player1", class: "form-player1" %>
+       <%= text_field_tag :challenger, nil, placeholder: "Player1", :autocomplete => :off, class: "form-player1" %>
     </div>
     <div class="insta-suggestions-1">
       <div class="results">
@@ -15,7 +15,7 @@
   <div class="user-form">
   <h3 class="text-center">PLAYER 2</h3>
     <div class="card-users text-center">
-      <%= text_field_tag :opponent, nil, placeholder: "Player2", class: "form-player2" %>
+      <%= text_field_tag :opponent, nil, placeholder: "Player2", :autocomplete => :off, class: "form-player2" %>
     </div>
     <div class="insta-suggestions-2">
       <div class="results">
