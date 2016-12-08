@@ -97,13 +97,15 @@
   </div>
 </div>
 
-<div class="container-share">
-  <h1 class="text-center title-style">SHARE THE RESULTS !!</h1>
-  <div class="share">
-    <h3 id="fb-sharer"><i class="fa fa-facebook-official title-style" aria-hidden="true"></i></h3>
-    <h3>
-      <a href="https://twitter.com/intent/tweet?text=<%= "#{@fight.challenger.username} VS #{@fight.opponent.username} : #{@fight.winner_name} #{request.original_url}" %>" title="Share on Twitter" target="_blank"><i class="fa fa-twitter title-style"></i></a>
-    </h3>
+<div class="flex-share">
+  <div class="container-share">
+    <h1 class="text-center title-style">SHARE THE RESULTS !!</h1>
+    <div class="share">
+      <h3 id="fb-sharer"><i class="fa fa-facebook-official title-style" aria-hidden="true"></i></h3>
+      <h3>
+        <a href="https://twitter.com/intent/tweet?text=<%= "#{@fight.challenger.username} VS #{@fight.opponent.username} : #{@fight.winner_name} #{request.original_url}" %>" title="Share on Twitter" target="_blank"><i class="fa fa-twitter title-style"></i></a>
+      </h3>
+    </div>
   </div>
 </div>
 
