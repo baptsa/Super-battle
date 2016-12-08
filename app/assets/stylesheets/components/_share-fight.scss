@@ -12,11 +12,10 @@
 .share {
   display: flex;
   justify-content: space-around;
-}
-
-.share i {
-  font-size: 40px;
-  margin: 20px;
+  i {
+    font-size: 40px;
+    margin: 20px;
+  }
 }
 
 @media screen and (max-width: 900px) {
