@@ -27,3 +27,4 @@ function fillInput(player) {
     $('.results').html('');
   })
 }
+
