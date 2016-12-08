@@ -1,26 +1,44 @@
 
+
 .insta-suggestions-1 {
   position: relative;
-  width: 350px;
+  height: 200px;
+  overflow: scroll;
+  margin-right: 75px;
   .results {
     position: absolute;
     top: 0;
     left: 75px;
     width: 200px;
     background-color: white;
-    box-shadow: 2px 2px 2px black;
+    border-radius: 2px;
   }
 }
 
 .insta-suggestions-2 {
   position: relative;
-  width: 350px;
+  height: 200px;
+  overflow: scroll;
+  margin-right: 75px;
   .results {
     position: absolute;
     top: 0;
     left: 75px;
     width: 200px;
     background-color: white;
-    box-shadow: 2px 2px 2px black;
+    border-radius: 2px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .insta-suggestions-2 {
+    height: 100px;
+    z-index: 1000;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .insta-suggestions-1 {
+    height: 100px;
   }
 }
