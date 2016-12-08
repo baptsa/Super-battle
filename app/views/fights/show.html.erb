@@ -124,7 +124,7 @@
         <div class="col-xs-4">
           <div class="stat-challenger">
             <h2 class="text-center"><%= @fight.challenger.username.upcase %></h2>
-            <h3 class="text-center"><%= @fight.challenger.followed_by %></h3>
+            <h3 class="text-center"><%= number_with_delimiter(@fight.challenger.followed_by, :delimiter => ',') %></h3>
             <h3 class="text-center"><%= @fight.challenger.follow %></h3>
             <h3 class="text-center"><%= @fight.challenger.media %></h3>
             <h3 class="text-center"><%= @fight.challenger.engagement %></h3>
@@ -140,7 +140,7 @@
         <div class="col-xs-4">
           <div class="stat-opponent">
             <h2 class="text-center"><%= @fight.opponent.username.upcase %></h2>
-            <h3 class="text-center"><%= @fight.opponent.followed_by %></h3>
+            <h3 class="text-center"><%= number_with_delimiter(@fight.opponent.followed_by, :delimiter => ',') %></h3>
             <h3 class="text-center"><%= @fight.opponent.follow %></h3>
             <h3 class="text-center"><%= @fight.opponent.media %></h3>
             <h3 class="text-center"><%= @fight.opponent.engagement %></h3>

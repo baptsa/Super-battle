@@ -12,6 +12,8 @@ class Scraper
 
       username = username
       profile_picture = userinfo["entry_data"]["ProfilePage"][0]["user"]["profile_pic_url"]
+      first_name = userinfo["entry_data"]["ProfilePage"][0]["user"]["full_name"]
+
 
       followed_by = userinfo["entry_data"]["ProfilePage"][0]["user"]["followed_by"]["count"]
       follows = userinfo["entry_data"]["ProfilePage"][0]["user"]["follows"]["count"]
@@ -25,7 +27,7 @@ class Scraper
       end
 
       engagement = ((sum.fdiv(nodes.size)).fdiv(followed_by) * 100).round
-      insta_user_params = { username: username, profile_picture: profile_picture, followed_by: followed_by, follow: follows, media: media, engagement: engagement }
+      insta_user_params = { username: username, profile_picture: profile_picture, first_name: first_name, followed_by: followed_by, follow: follows, media: media, engagement: engagement }
       insta_user = InstaUser.find_by(username: username)
 
       if insta_user
