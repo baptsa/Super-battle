@@ -1,4 +1,4 @@
-<% content_for :meta_title, "#{@fight.challenger.username} VS #{@fight.opponent.username}" %>
+<% content_for :meta_title, "#{@fight.challenger.username} VS #{@fight.opponent.username} : #{@fight.winner_name}" %>
 <% content_for :meta_description, "Quickly generate fights between Instagram accounts with Super-Battle" %>
 <% content_for :meta_image, image_path("super-battle-sharing.jpg") %>
 
@@ -29,7 +29,7 @@
   <div class="row">
     <div class="text-center title-style">
       <div>
-        <h1 class="title-style"> <%= winner_name %></h1>
+        <h1 class="title-style"> <%= @fight.winner_name %></h1>
       </div>
     </div>
   </div>
