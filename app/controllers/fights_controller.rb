@@ -68,16 +68,16 @@ class FightsController < ApplicationController
     end
   end
 
-    def winner_name
-       @fight = Fight.find(params[:id])
-       if @fight.final_score_challenger > @fight.final_score_opponent
-         "@" + @fight.challenger.username.upcase + " WINS"
-       elsif @fight.final_score_challenger < @fight.final_score_opponent
-         "@" + @fight.opponent.username.upcase + " WINS"
-       else
-         return "IT'S A DRAW !!"
-       end
+  def winner_name
+     @fight = Fight.find(params[:id])
+     if @fight.final_score_challenger > @fight.final_score_opponent
+       "@" + @fight.challenger.username.upcase + " WINS"
+     elsif @fight.final_score_challenger < @fight.final_score_opponent
+       "@" + @fight.opponent.username.upcase + " WINS"
+     else
+       return "IT'S A DRAW !!"
      end
+   end
 
 
 

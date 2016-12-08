@@ -1,4 +1,4 @@
-meta_title: "Super-Battle"
+meta_title: "Super-Battle, a fun web-app to compare Instagram accounts"
 meta_description: "Super-battle is a fun app which allows Instagram users to compare their accounts."
-meta_image: "super-battle-sharing.jpeg" # Une image dans votre dossier app/assets/images/
-twitter_account: "@nomdevotrecompte" # indispensable pour les Twitter Cards
+meta_image: "super-battle-sharing.jpg" # Une image dans votre dossier app/assets/images/
+twitter_account: "@SupaBattle" # indispensable pour les Twittxer Cards

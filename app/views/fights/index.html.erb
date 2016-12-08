@@ -1,61 +1,46 @@
 <div class="index-fight">
   <% @fights.reverse.each_with_index do |fight, i| %>
-
+  <% id = fight.id %>
   <div class="row ">
     <div class="col-xs-12">
-      <% id = fight.id %>
-      <a style="display:block; text-decoration: none; color: grey" href="/fights/#{id}">
-      <div class="box-fight">
-        <div>
-          <% d = Time.at(fight.created_at.to_i) %>
-          <%= d.strftime("%d/%m - %H:%M") %>
-        </div>
-      </a>
-        <div class="border-winner-index1">
+      <%= link_to fight_path(fight), target: "_blank" do %>
+        <div class="box-fight">
+          <div class="hidden" class= "fight-id"> <%= fight.id %> </div>
           <div>
-            <%= image_tag fight.challenger.profile_picture, class: "avatar-medium-fights" %>
-            <%= fight.challenger.username %>
+            <% d = Time.at(fight.created_at.to_i) %>
+            <%= d.strftime("%d/%m - %H:%M") %>
           </div>
-          <div class="h1 text-right" id="scorePlayer1">
-            <span>
-            <%= fight.final_score_challenger %>
-            </span>
-          </div>
-        </div>
 
-        <div class= "border-winner-index2">
-          <div>
-            <%= fight.opponent.username %>
-            <%= image_tag fight.opponent.profile_picture, class: "avatar-medium-fights" %>
+          <div class="border-winner-index1 <%= fight.winner == fight.challenger ? "winner" : "" %>">
+            <div>
+              <%= image_tag fight.challenger.profile_picture, class: "avatar-medium-fights" %>
+              <%= fight.challenger.username %>
+            </div>
+            <div class="h1 text-right" id="scorePlayer<%= fight.id %>">
+              <span>
+              <%= fight.final_score_challenger %>
+              </span>
+            </div>
           </div>
-          <div class="h1" id="scorePlayer2">
-            <span>
-            <%= fight.final_score_opponent %>
-            </span>
-          </div>
-        </div>
 
-      </div>
+          <div class= "border-winner-index2 <%= fight.winner == fight.opponent ? "winner" : "" %>">
+            <div>
+              <%= fight.opponent.username %>
+              <%= image_tag fight.opponent.profile_picture, class: "avatar-medium-fights" %>
+            </div>
+            <div class="h1" id="scorePlayer<%= fight.id + 1 %>">
+              <span>
+              <%= fight.final_score_opponent %>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      <% end %>
     </div>
   </div>
   <% end %>
 </div>
 
-<script>
-
-  //   window.addEventListener("load", function(event) {
-  //    var a = $('.row').toArray()
-  //    a.forEach(function() {
-  //    var score1 = Number($('#scorePlayer1').text());
-  //    var score2 = Number($('#scorePlayer2').text());
-  //    if (score2 > score1) {
-  //      $('.border-winner-index1').addClass('border-winner-index-figth1');
-  //    } else {
-  //      $('border-winner-index2').addClass('border-winner-index-figth2');
-  //    }
-  //   });
-  // });
-
-</script>
 
 
