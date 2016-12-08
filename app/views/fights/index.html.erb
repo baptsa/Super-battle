@@ -16,25 +16,20 @@
               <%= image_tag fight.challenger.profile_picture, class: "avatar-medium-fights" %>
               <%= fight.challenger.username %>
             </div>
-            <div class="h1 text-right " id="scorePlayer<%= fight.id %>">
-              <span>
-              <%= fight.final_score_challenger %>
-              </span>
+            <div class="text-right" id="scorePlayer<%= fight.id %>">
+               <h1><%= fight.final_score_challenger %></h1>
             </div>
           </div>
 
           <div class= "border-winner-index2 fighter-box <%= fight.winner == fight.opponent ? "winner" : "" %>">
-            <div>
+            <div class="text-right">
               <%= fight.opponent.username %>
               <%= image_tag fight.opponent.profile_picture, class: "avatar-medium-fights" %>
             </div>
-            <div class="h1" id="scorePlayer<%= fight.id + 1 %>">
-              <span>
-              <%= fight.final_score_opponent %>
-              </span>
+            <div id="scorePlayer<%= fight.id + 1 %>">
+              <h1><%= fight.final_score_opponent %></h1>
             </div>
           </div>
-
         </div>
       <% end %>
     </div>
