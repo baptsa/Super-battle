@@ -20,8 +20,8 @@ class FightsController < ApplicationController
 
   def create
     # 1) Instantier les 2 insta user
-    @challenger = Scraper.new.scrap(params[:challenger])
-    @opponent = Scraper.new.scrap(params[:opponent])
+    @challenger = Scraper.new.scrap(params[:challenger].strip)
+    @opponent = Scraper.new.scrap(params[:opponent].strip)
 
     if !@challenger || !@opponent
       flash[:alert] = "The username you have entered does not exist, retry!"

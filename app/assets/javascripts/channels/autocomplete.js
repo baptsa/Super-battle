@@ -20,10 +20,10 @@ function autocomplete(player, url) {
 function fillInput(player) {
   $(".insta-suggestions-" + player + " .result-item").on("click", function() {
     // on récèpère le username
-    var first_name = $(this).text();
-    var username = $(this).data("username");
+    var username = $(this).text();
+
     // on remplit l'input
-    $('.form-player' + player).val(first_name);
+    $('.form-player' + player).val(username);
     copy = $('.form-player' + player).clone();
     copy.attr("type", "hidden");
     copy.val(username);
