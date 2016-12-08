@@ -10,7 +10,7 @@
   align-items: center;
   font-size: 20px;
   background-color: #f7f7fa;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: all 0.15s ease;
 }
 
@@ -24,13 +24,26 @@
   color: #333333;
 }
 
+.date-fight {
+  flex: 0 0 20%;
+}
+
+.fighter-box {
+  flex: 0 0 35%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
 .winner {
-  padding: 0 10px;
+  // flex: 0 0 35%;
+  // padding: 10px;
+  // border-radius: 4px;
   &.border-winner-index1 {
-    border: 2px solid #E84A5F;
+    background: #E84A5F;
+    // border: 3px solid #E84A5F;
   }
   &.border-winner-index2 {
-    border: 2px solid #574B90;
+    background: #574B90;
   }
 }
 
