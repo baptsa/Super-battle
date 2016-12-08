@@ -2,6 +2,7 @@ class InstaUsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
+
     if params[:username].blank?
       @insta_users = []
     else

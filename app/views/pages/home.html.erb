@@ -6,6 +6,7 @@
     <div class="card-users text-center">
       <%= form_tag fights_path, method: :post do %>
        <%= text_field_tag :challenger, nil, placeholder: "Player1", :autocomplete => :off, class: "form-player1" %>
+       <%= hidden_field_tag :username %>
     </div>
     <div class="insta-suggestions-1">
       <div class="results">
