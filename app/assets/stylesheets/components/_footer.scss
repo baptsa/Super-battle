@@ -1,35 +1,13 @@
 .footer {
-
     bottom: 0;
     width: 100%;
-    padding-top: 16px;
     display: flex;
+    justify-content: flex-end;
     bottom: 0px;
     text-shadow: 2px 2px #1FA8CF;
 }
 
-
-.right {
-
-    justify-content: space-between;
-    align-items: center;
-    width: 500px;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: flex-end;
-}
-
-
-
 .right a {
-
   margin-right: 20px;
   text-decoration: none;
   color: white;
