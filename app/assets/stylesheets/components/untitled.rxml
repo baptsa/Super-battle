@@ -6,9 +6,7 @@ class Scraper
   def scrap(username)
     begin
       doc = Nokogiri::HTML(open("https://www.instagram.com/#{username}/"))
-      script_tag = doc.search("script")[-5]
-      json = script_tag.content.split(" = ").last[0...-1]
-      userinfo = JSON.parse json
+      userinfo = JSON.parse doc.search("script")[-5].children.first.content.split(" = ").last.split(";").first
 
       username = username
       profile_picture = userinfo["entry_data"]["ProfilePage"][0]["user"]["profile_pic_url"]
@@ -40,6 +38,3 @@ class Scraper
       end
     end
   end
-
-# p = Scraper.new.scrap("jo.mo1")
-
