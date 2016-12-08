@@ -10,5 +10,14 @@ class Fight < ApplicationRecord
   validates :opponent_id, presence: true, allow_blank: false
 
   # require 'score_algorithm.rb'
+  def winner_name
+    if self.final_score_challenger > self.final_score_opponent
+      "@" + self.challenger.username.upcase + " WINS"
+    elsif self.final_score_challenger < self.final_score_opponent
+      "@" + self.opponent.username.upcase + " WINS"
+    else
+      return "IT'S A DRAW !!"
+    end
+  end
 end
 
