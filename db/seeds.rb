@@ -6,49 +6,58 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+InstaUser.destroy_all
+# jo = User.create!(email:"jomourot@supper-battle.com", password:"azerty")
+# paal = User.create!(email:"paal@supper-battle.com", password:"azerty")
+# zguy = User.create!(email:"zguy@supper-battle.com", password:"azerty")
+# baptiste = User.create!(email:"baptiste@super-battle.com", password:"azerty")
+# romain = User.create!(email:"romain@super-battle.com", password:"azerty")
 
-jo = User.create!(email:"jomourot@supper-battle.com", password:"azerty")
-paal = User.create!(email:"paal@supper-battle.com", password:"azerty")
-zguy = User.create!(email:"zguy@supper-battle.com", password:"azerty")
-baptiste = User.create!(email:"baptiste@super-battle.com", password:"azerty")
-romain = User.create!(email:"romain@super-battle.com", password:"azerty")
+ar = ["instagram", "selenagomez", "taylorswift", "arianagrande", "beyonce", "kimkardashian", "cristiano", "kyliejenner", "justinbieber", "therock", "kendalljenner", "nickiminaj", "nike", "natgeo", "neymarjr", "leomessi", "khloekardashian", "katyperry", "mileycyrus", "jlo", "ddlovato", "kourtneykardash", "victoriassecret", "badgalriri", "kevinhart4real", "fcbarcelona", "realmadrid", "justintimberlake", "theellenshow", "caradelevingne", "zendaya", "9gag", "chrisbrownofficial", "davidbeckham", "champagnepapi", "vindiesel", "shakira", "jamesrodriguez10", "kingjames", "gigihadid", "garethbale11", "nikefootball", "zacefron", "vanessahudgens", "adele", "iamzlatanibrahimovic", "emmawatson", "ladygaga", "danbilzerian", "nba", "harrystyles", "letthelordbewithyou", "ronaldinhooficial", "luissuarez9", "maluma", "niallhoran", "adidasfootball", "hm", "nasa", "brumarquezine", "ayutingting92", "zayn", "onedirection", "camerondallas", "chanelofficial", "zachking", "lucyhale", "shawnmendes", "anitta", "karimbenzema", "marinaruybarbosa", "princessyahrini", "krisjenner", "davidluiz_4", "andresiniesta8", "itsashbenzo", "zara", "instagrambrasil", "nickyjampr", "manchesterunited", "shaym", "raffinagita1717", "marcelotwelve", "bellathorne", "ciara", "repostapp", "britneyspears", "natgeotravel", "louisvuitton", "stephencurry30", "laudyacynthiabella", "floydmayweather", "wizkhalifa", "snoopdogg", "prillylatuconsina96", "clips", "jbalvin", "voguemagazine"]
 
-InstaUser.create!({
-  username:          "Beyonce",
-  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/12918039_230227960666719_282379501_a.jpg",
-  first_name:        "Beyoncé",
-  last_name:         "Beyoncé",
-  bio:               "coucou c'est beyoncé",
-  media:             8,
-  follow:            10,
-  followed_by:       30,
-  user_id:           jo.id
-})
+ar.each do |user|
+  p user
+  Scraper.new.scrap(user)
+end
 
-InstaUser.create!({
-  username:          "Mr Holland",
-  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/12917992_895774263873055_1966939033_a.jpg",
-  first_name:        "François",
-  last_name:         "Hollande",
-  bio:               "Coucou, c'est Hollande",
-  media:             321,
-  follow:            1345,
-  followed_by:       10000,
-  user_id:           jo.id
-})
+# Scraper.new.scrap("jo.mo1")
+
+# InstaUser.create!({
+#   username:          "Beyonce",
+#   profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/12918039_230227960666719_282379501_a.jpg",
+#   first_name:        "Beyoncé",
+#   last_name:         "Beyoncé",
+#   bio:               "coucou c'est beyoncé",
+#   media:             8,
+#   follow:            10,
+#   followed_by:       30,
+#   user_id:           jo.id
+# })
+
+# InstaUser.create!({
+#   username:          "Mr Holland",
+#   profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/12917992_895774263873055_1966939033_a.jpg",
+#   first_name:        "François",
+#   last_name:         "Hollande",
+#   bio:               "Coucou, c'est Hollande",
+#   media:             321,
+#   follow:            1345,
+#   followed_by:       10000,
+#   user_id:           jo.id
+# })
 
 
-InstaUser.create!({
-  username:          "shakira",
-  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/15101730_833344936808672_3706769398803988480_a.jpg",
-  first_name:        "shakira",
-  last_name:         "shakira",
-  bio:               "coucou c'est shakira",
-  media:             10,
-  follow:            20,
-  followed_by:       100,
-  user_id:           paal.id
-})
+# InstaUser.create!({
+#   username:          "shakira",
+#   profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/15101730_833344936808672_3706769398803988480_a.jpg",
+#   first_name:        "shakira",
+#   last_name:         "shakira",
+#   bio:               "coucou c'est shakira",
+#   media:             10,
+#   follow:            20,
+#   followed_by:       100,
+#   user_id:           paal.id
+# })
 
 
 
@@ -72,41 +81,41 @@ InstaUser.create!({
 # shakira = InstaUser.new(username: "Shakira-Shakira", profile_picture: "url", first_name:"shakira", last_name:"shakira", bio:"coucou c'est shakira", media:8, follow:10, followed_by:30, user_id:paal.id )
 # shakira.save!
 
-InstaUser.create!({
-  username:          "Barack Obama",
-  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/12345756_1206817265997207_288075195_a.jpg",
-  first_name:        "Barack",
-  last_name:         "Obama",
-  bio:               "I am still the president",
-  media:             122,
-  follow:            340,
-  followed_by:       1023,
-  user_id:           paal.id
-})
+# InstaUser.create!({
+#   username:          "Barack Obama",
+#   profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/12345756_1206817265997207_288075195_a.jpg",
+#   first_name:        "Barack",
+#   last_name:         "Obama",
+#   bio:               "I am still the president",
+#   media:             122,
+#   follow:            340,
+#   followed_by:       1023,
+#   user_id:           paal.id
+# })
 
-InstaUser.create!({
-  username:          "Michael Phelps",
-  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/14134712_1142642795792654_2109380723_a.jpg",
-  first_name:        "Michael",
-  last_name:         "Phelps",
-  bio:               "I am an OL gold medal winner",
-  media:             122,
-  follow:            340,
-  followed_by:       1024,
-  user_id:           paal.id
-})
+# InstaUser.create!({
+#   username:          "Michael Phelps",
+#   profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/s320x320/14134712_1142642795792654_2109380723_a.jpg",
+#   first_name:        "Michael",
+#   last_name:         "Phelps",
+#   bio:               "I am an OL gold medal winner",
+#   media:             122,
+#   follow:            340,
+#   followed_by:       1024,
+#   user_id:           paal.id
+# })
 
-InstaUser.create!({
-  username:          "Lionel Messi",
-  profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/11374627_416190928582643_995636312_a.jpg",
-  first_name:        "Lionel",
-  last_name:         "Messi",
-  bio:               "I am the best football player",
-  media:             122,
-  follow:            349,
-  followed_by:       91023,
-  user_id:           paal.id
-})
+# InstaUser.create!({
+#   username:          "Lionel Messi",
+#   profile_picture:   "https://scontent-cdg2-1.cdninstagram.com/t51.2885-19/11374627_416190928582643_995636312_a.jpg",
+#   first_name:        "Lionel",
+#   last_name:         "Messi",
+#   bio:               "I am the best football player",
+#   media:             122,
+#   follow:            349,
+#   followed_by:       91023,
+#   user_id:           paal.id
+# })
 
 
 # fight1 = Fight.create!(challenger_id: 1, opponent_id: 2)
