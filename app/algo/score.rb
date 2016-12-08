@@ -88,16 +88,26 @@ class Score
     engagement = @insta_user.engagement
     # if @insta_user.followed_by < 100
       if engagement < 1
-        return score
-      elsif engagement < 5
-        score += 2
-      elsif engagement < 8
+        score += 1
+      elsif engagement < 2
+        score += 5
+      elsif engagement < 3
+        score += 7
+      elsif engagement < 4
         score += 10
-      elsif engagement < 10
+      elsif engagement < 5
+        score += 12
+      elsif engagement < 7
+        score += 15
+      elsif engagement < 9
+        score += 20
+      elsif engagement < 11
+        score += 23
+      elsif engagement < 13
         score += 25
-      elsif engagement < 12
+      elsif engagement < 15
         score += 30
-      elsif engagement >= 13
+      elsif engagement >= 15
         score += 40
       end
   #   elsif @insta_user.followed_by >= 100 && @insta_user.followed_by < 500
