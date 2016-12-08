@@ -3,7 +3,8 @@
 
   <div class="row ">
     <div class="col-xs-12">
-      <a style="display:block; text-decoration: none; color: grey" href="#">
+      <% id = fight.id %>
+      <a style="display:block; text-decoration: none; color: grey" href="/fights/#{id}">
       <div class="box-fight">
         <div>
           <% d = Time.at(fight.created_at.to_i) %>
