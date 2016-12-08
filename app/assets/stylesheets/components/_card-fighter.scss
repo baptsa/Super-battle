@@ -11,21 +11,18 @@
   background-color: #E84A5F;
   color: white;
   position: relative;
-}
-
-.results-red h1 {
-  position: absolute;
-  font-size: 80px;
-  right: 200px;
-  text-shadow: 2px 2px 2px black;
-}
-
-.results-red h2 {
-  margin-left: 10px;
-}
-
-.results-red h3 {
-  margin-left: 10px;
+  h1 {
+    position: absolute;
+    font-size: 80px;
+    right: 200px;
+    text-shadow: 2px 2px 2px black;
+  }
+  h2 {
+    margin-left: 10px;
+  }
+  h3 {
+    margin-left: 10px;
+  }
 }
 
 .results-blue {
@@ -33,70 +30,61 @@
   background-color: #574B90;
   color: white;
   position: relative;
-}
-
-.results-blue h1 {
-  position: absolute;
-  left: 200px;
-  font-size: 80px;
-  left: 200px;
-  text-shadow: 2px 2px 2px black;
-}
-
-.results-blue h2 {
-  text-align: right;
-  margin-right: 10px;
-}
-
-.results-blue h3 {
-  text-align: right;
-  margin-right: 10px;
-}
-
-.table-score-red i {
-  font-size: 20px;
-  margin: 10px;
-}
-
-.table-score-blue i {
-  font-size: 20px;
-  margin: 10px;
-}
-
-.table-score-blue {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.table-score-blue table {
-  text-align: right;
-  width: 390px;
-  font-size: 40px;
-  margin-right: 65px;
-  margin-top: 40px
+  h1 {
+    position: absolute;
+    left: 200px;
+    font-size: 80px;
+    left: 200px;
+    text-shadow: 2px 2px 2px black;
+  }
+  h2 {
+    text-align: right;
+    margin-right: 10px;
+  }
+  h3 {
+    text-align: right;
+    margin-right: 10px;
+  }
 }
 
 .table-score-red {
   display: flex;
   justify-content: flex-start;
+  i {
+    font-size: 20px;
+    margin: 10px;
+  }
+  table {
+    text-align: left;
+    width: 390px;
+    font-size: 40px;
+    margin-left: 65px;
+    margin-top: 40px
+  }
+  a {
+    color: white;
+    margin: 0;
+  }
 }
 
-.table-score-red table {
-  text-align: left;
-  width: 390px;
-  font-size: 40px;
-  margin-left: 65px;
-  margin-top: 40px
-}
-
-.table-score-red a {
-  color: white;
-  margin: 0;
-}
-
-.table-score-blue a {
-  color: white;
-  margin: 0;
+.table-score-blue {
+  display: flex;
+  justify-content: flex-end;
+  table {
+    text-align: right;
+    width: 390px;
+    font-size: 40px;
+    margin-right: 65px;
+    margin-top: 40px
+  }
+  i {
+    font-size: 20px;
+    margin: 10px;
+  }
+  a {
+    color: white;
+    margin: 0;
+  }
 }
 
 .modal-details {

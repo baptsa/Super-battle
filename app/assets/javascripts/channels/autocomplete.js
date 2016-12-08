@@ -1,3 +1,7 @@
+$(document).ready(function() {
+})
+
+
 function autocomplete(player, url) {
   $(".form-player" + player).on("keyup", function(event) {
     // Code executed when a form is submitted
@@ -5,7 +9,22 @@ function autocomplete(player, url) {
     $.ajax({
       type: "GET",
       dataType: "script",
-      url: url + "?username=" + username + "&player=" + player
+      url: url + "?username=" + username + "&player=" + player,
+      success: function() {
+        fillInput(player);
+      }
     });
   });
 }
+
+function fillInput(player) {
+  $(".insta-suggestions-" + player + " .result-item").on("click", function() {
+    // on récèpère le username
+    var username = $(this).text();
+    // on remplit l'input
+    $('.form-player' + player).val(username);
+    // on vide results
+    $('.results').html('');
+  })
+}
+
