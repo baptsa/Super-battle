@@ -9,26 +9,66 @@ class Score
     score = 0
     followed_by = @insta_user.followed_by
     if followed_by < 100
-      score = 0
+      score = 1
     elsif followed_by < 200
       score = 2
-    elsif followed_by < 500
+    elsif followed_by < 400
+      score = 3
+    elsif followed_by < 600
+      score = 4
+    elsif followed_by < 800
       score = 5
     elsif followed_by < 1000
-      score = 9
+      score = 6
+    elsif followed_by < 1500
+      score = 7
     elsif followed_by < 2000
-      score = 13
-    elsif followed_by < 4000
-      score = 17
+      score = 8
+    elsif followed_by < 3000
+      score = 9
+    elsif followed_by < 5000
+      score = 10
     elsif followed_by < 8000
-      score = 21
+      score = 11
     elsif followed_by < 12000
-      score = 25
+      score = 12
     elsif followed_by < 20000
+      score = 13
+    elsif followed_by < 40000
+      score = 14
+    elsif followed_by < 100000
+      score = 15
+    elsif followed_by < 200000
+      score = 16
+    elsif followed_by < 500000
+      score = 17
+    elsif followed_by < 1000000
+      score = 18
+    elsif followed_by < 2000000
+      score = 19
+    elsif followed_by < 5000000
+      score = 20
+    elsif followed_by < 10000000
+      score = 22
+    elsif followed_by < 20000000
+      score = 24
+    elsif followed_by < 30000000
+      score = 26
+    elsif followed_by < 40000000
+      score = 28
+    elsif followed_by < 50000000
       score = 30
-    elsif followed_by < 50000
-      score = 35
-    else
+    elsif followed_by < 60000000
+      score = 32
+    elsif followed_by < 70000000
+      score = 34
+    elsif followed_by < 80000000
+      score = 36
+    elsif followed_by < 90000000
+      score = 38
+    elsif followed_by < 100000000
+      score = 40
+    elsif followed_by >= 100000000
       score = 42
     end
   end
