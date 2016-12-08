@@ -6,24 +6,24 @@
       <%= link_to fight_path(fight), target: "_blank" do %>
         <div class="box-fight">
           <div class="hidden" class= "fight-id"> <%= fight.id %> </div>
-          <div>
+          <div class="h3 date-fight">
             <% d = Time.at(fight.created_at.to_i) %>
             <%= d.strftime("%d/%m - %H:%M") %>
           </div>
 
-          <div class="border-winner-index1 <%= fight.winner == fight.challenger ? "winner" : "" %>">
+          <div class="border-winner-index1 fighter-box <%= fight.winner == fight.challenger ? "winner" : "" %>">
             <div>
               <%= image_tag fight.challenger.profile_picture, class: "avatar-medium-fights" %>
               <%= fight.challenger.username %>
             </div>
-            <div class="h1 text-right" id="scorePlayer<%= fight.id %>">
+            <div class="h1 text-right " id="scorePlayer<%= fight.id %>">
               <span>
               <%= fight.final_score_challenger %>
               </span>
             </div>
           </div>
 
-          <div class= "border-winner-index2 <%= fight.winner == fight.opponent ? "winner" : "" %>">
+          <div class= "border-winner-index2 fighter-box <%= fight.winner == fight.opponent ? "winner" : "" %>">
             <div>
               <%= fight.opponent.username %>
               <%= image_tag fight.opponent.profile_picture, class: "avatar-medium-fights" %>
