@@ -1,6 +1,6 @@
 $('.insta-suggestions-<%= params[:player] %> .results').html('');
 <% @insta_users.each do |insta_user| %>
-  $('.insta-suggestions-<%= params[:player] %> .results').append("<div class='result-item' data-username='<%= insta_user.username %>'><%= insta_user.username %></div>");
+  $('.insta-suggestions-<%= params[:player] %> .results').append('<%= j render "insta_user_item", insta_user: insta_user %>');
 <% end %>
 
 

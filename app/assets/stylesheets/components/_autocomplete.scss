@@ -1,10 +1,16 @@
 .result-item {
   cursor: pointer;
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-top: 5px;
+  padding: 5px 15px;
   margin-top: 5px;
   margin-bottom: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  .insta-avatar {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
 }
 
 
