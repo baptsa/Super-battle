@@ -4,7 +4,7 @@ Devise.setup do |config|
 
   config.omniauth :instagram, ENV["IG_ID"], ENV["IG_SECRET"],
 
-    scope: 'public_content basic follower_list',
+    scope: 'basic',
     image_size: 'square',  # 50x50, guaranteed ratio
     secure_image_url: true
 
