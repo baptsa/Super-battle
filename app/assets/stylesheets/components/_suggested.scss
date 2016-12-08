@@ -15,15 +15,19 @@
   }
 }
 
-.list-item {
-
-}
-
-
-#insta-results {
-}
 
 .insta-suggestions-1 {
+  position: relative;
+  width: 350px;
+  .results {
+    position: absolute;
+    top: 0;
+    left: 75px;
+    width: 200px;
+  }
+}
+
+.insta-suggestions-2 {
   position: relative;
   width: 350px;
   .results {
