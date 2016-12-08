@@ -1,0 +1,17 @@
+.result-item {
+  cursor: pointer;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+
+.insta-suggestions-1 .result-item:hover {
+  background-color: #e84a5f;
+  color: white;
+}
+
+.insta-suggestions-2 .result-item:hover {
+  background-color: #574b90;
+  color: white;
+}
