@@ -2,20 +2,21 @@
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  background-color: white;
   width: 60%;
   margin: auto;
   padding: 20px;
+  border-bottom: 2px solid #fedf7f;
+  border-top: 2px solid #fedf7f;
   margin-bottom: 8px;
   align-items: center;
   font-size: 20px;
-  background-color: #f7f7fa;
-  border-radius: 8px;
+  background-color: #fed149;
+  // border-radius: 8px;
   transition: all 0.15s ease;
 }
 
 .box-fight:hover {
-  background: lightgrey;
+  background: #fedf7f;
   cursor: pointer;
 }
 
