@@ -41,11 +41,9 @@
 <div class="container">
   <div class="social-container text-center">
     <p href="">Share:</p>
-    <a href="https://soundcloud.com/fantastic-mister-zguy" target="_blank">
-      <i class="fa fa-instagram" aria-hidden="true"></i>
-    </a>
+    <a href="https://twitter.com/intent/tweet?text=<%= "Who's the most popular on Instagram? Find out on Super-Battle #{request.original_url}" %>" title="Share on Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
     <a href="" target="_blank">
-      <i class="fa fa-facebook" aria-hidden="true"></i>
+      <i class="fa fa-facebook fb-sharer" aria-hidden="true"></i>
     </a>
   </div>
 </div>
@@ -58,5 +56,29 @@
       autocomplete("1", "<%= insta_users_path %>");
       autocomplete("2", "<%= insta_users_path %>");
     });
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : "1176076832469650",
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+
+    $('#fb-sharer').click(function() {
+      FB.ui({
+        method: 'share',
+        display: 'popup',
+        href: window.location.href,
+      }, function(response){});
+    })
   </script>
 <% end %>
