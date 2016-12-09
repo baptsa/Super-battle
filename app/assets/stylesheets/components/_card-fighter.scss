@@ -22,7 +22,8 @@
   h1 {
     position: absolute;
     font-size: 80px;
-    right: 200px;
+    top: -110px;
+    right: 178px;
     text-shadow: 2px 2px 2px black;
   }
   h2 {
@@ -32,7 +33,35 @@
     margin-left: 10px;
   }
 }
+.relative {
+  position: relative;
+}
 
+.red-score {
+  position: absolute;
+  left: 7px;
+  font-size: 66px;
+  text-shadow: 2px 2px 2px black;
+  color: white;
+  margin-top: 0;
+  top: 0;
+  z-index: 1;
+}
+.blue-score {
+  position: absolute;
+  right: 0;
+  font-size: 66px;
+  text-shadow: 2px 2px 2px black;
+  color: white;
+  margin-top: 0;
+  top: 0;
+  z-index: 1;
+}
+.progress-bar {
+  background-color: #1FA8CF;
+  // transition: all 2s ease;
+  // width: 0px;
+}
 .results-blue {
   flex: 0 0 50%;
   background-color: #574B90;
@@ -41,8 +70,9 @@
   h1 {
     position: absolute;
     left: 200px;
+    top: -110px;
+    left: 152px;
     font-size: 80px;
-    left: 200px;
     text-shadow: 2px 2px 2px black;
   }
   h2 {
@@ -67,7 +97,12 @@
     width: 390px;
     font-size: 40px;
     margin-left: 65px;
-    margin-top: 40px
+    margin-top: 40px;
+    tr {
+      td:last-child {
+        text-align: right;
+      }
+    }
   }
   a {
     color: white;
@@ -83,7 +118,15 @@
     width: 390px;
     font-size: 40px;
     margin-right: 65px;
-    margin-top: 40px
+    margin-top: 40px;
+    tr {
+      td:first-child {
+        text-align: right;
+      }
+      td:last-child {
+        text-align: right;
+      }
+    }
   }
   i {
     font-size: 20px;
