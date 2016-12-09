@@ -37,12 +37,21 @@
   z-index: 10;
 }
 
-.card-hover:hover {
+// .card-hover:hover {
+//   a {
+//     color: #fed149;
+//     text-shadow: 2px 2px 2px #574b90;
+//     border:none;
+//     outline:none;
+//   }
+//   opacity: 1;
+// }
+.card-hover.hover {
   a {
-  color: #fed149;
-  text-shadow: 2px 2px 2px #574b90;
-  border:none;
-  outline:none;
+    color: #fed149;
+    text-shadow: 2px 2px 2px #574b90;
+    border:none;
+    outline:none;
   }
   opacity: 1;
 }

@@ -175,9 +175,13 @@
 
 
   function show(timer, selector1, selector2) {
+    console.log(timer, selector1, selector2)
     setTimeout(function(){
-      document.getElementById(selector1).style.visibility = "visible";
-      document.getElementById(selector2).style.visibility = "visible";
+      if (document.getElementById(selector1) )
+        document.getElementById(selector1).style.visibility = "visible";
+
+      if (document.getElementById(selector2) )
+        document.getElementById(selector2).style.visibility = "visible";
     },timer);
   }
 
@@ -231,8 +235,7 @@
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
 
-  </script>
-  <script>
+
     $('#fb-sharer').click(function() {
       FB.ui({
         method: 'share',
@@ -245,8 +248,7 @@
     //     window.open("https://www.facebook.com/sharer/sharer.php?u=" + window.location.href, "width=600, height=400, scrollbars=no");
     //   });
     // });
-  </script>
-  <script>
+
     window.twttr = (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {};
       if (d.getElementById(id)) return t;
@@ -262,5 +264,18 @@
 
       return t;
     }(document, "script", "twitter-wjs"));
+
+    $(function() {
+      $(".card-hover").on("mouseenter", function() {
+        $(this).addClass("hover");
+      })
+      $(".card-hover").on("mouseleave", function() {
+        $(this).removeClass("hover");
+      })
+      setTimeout(function() {
+        $(".card-hover").addClass("hover");
+      }, 7000)
+    });
   </script>
+
 <% end %>
