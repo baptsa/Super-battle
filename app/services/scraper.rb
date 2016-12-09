@@ -26,7 +26,16 @@ class Scraper
         sum += node["comments"]["count"].to_i
       end
 
+      if nodes.size == 0
+        nodes << 1
+      end
+
+      if followed_by == 0
+        followed_by = 1
+      end
+
       engagement = ((sum.fdiv(nodes.size)).fdiv(followed_by) * 100).round
+
       insta_user_params = { username: username, profile_picture: profile_picture, first_name: first_name, followed_by: followed_by, follow: follows, media: media, engagement: engagement }
       insta_user = InstaUser.find_by(username: username)
 
@@ -38,6 +47,8 @@ class Scraper
 
       return insta_user
       rescue OpenURI::HTTPError => e
+      return false
+    rescue URI::InvalidURIError => e
       return false
       end
     end
