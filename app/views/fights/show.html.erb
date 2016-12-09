@@ -91,8 +91,10 @@
     </div>
       <% if @fight.final_score_challenger > @fight.final_score_opponent%>
       <%= video_tag('battle1.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
-      <% else %>
+      <% elsif @fight.final_score_challenger < @fight.final_score_opponent%>
       <%= video_tag('battle2.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
+      <% else %>
+      <%= video_tag('battle4.mp4', class: "styled_video_container", autoplay: true, loop: false, size: "300x300") %>
       <% end %>
   </div>
 </div>
